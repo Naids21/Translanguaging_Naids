@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#11243a" />
+  <meta name="description" content="Interactive web presentation on translanguaging as a pedagogical strategy in multilingual classrooms." />
+  <link rel="icon" href="./favicon.svg" />
+  <title>Translanguaging · Interactive Presentation</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <a class="skip-link" href="#deck">Skip to presentation</a>
+
+    <header class="presentation-chrome" aria-label="Presentation controls">
+      <button class="icon-button" id="menuBtn" aria-label="Open section menu" aria-controls="menuPanel" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="brand-lockup" aria-hidden="true">
+        <span class="brand-dot"></span>
+        <span>TRANSLANGUAGING</span>
+      </div>
+      <div class="chrome-actions">
+        <button class="text-button" id="presenterBtn" title="Open presenter view (P)">Presenter</button>
+        <button class="icon-button fullscreen-button" id="fullscreenBtn" aria-label="Toggle fullscreen" title="Fullscreen (F)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <aside id="menuPanel" class="menu-panel" aria-hidden="true">
+      <div class="menu-head">
+        <div><span class="eyebrow">Navigate</span><h2>Presentation map</h2></div>
+        <button class="icon-button close-menu" id="closeMenuBtn" aria-label="Close menu">×</button>
+      </div>
+      <nav id="sectionNav" class="section-nav" aria-label="Sections"></nav>
+      <div class="menu-actions">
+        <button id="restartBtn" class="secondary-button">↺ Restart presentation</button>
+        <button id="menuPresenterBtn" class="secondary-button">Open presenter view</button>
+      </div>
+      <p class="menu-help">Keys: <kbd>←</kbd> <kbd>→</kbd> / <kbd>Space</kbd> · <kbd>F</kbd> fullscreen · <kbd>P</kbd> presenter · <kbd>M</kbd> menu</p>
+    </aside>
+    <div id="menuScrim" class="menu-scrim" hidden></div>
+
+    <main id="deck" class="deck" role="region" aria-label="Interactive presentation">
+
+      <section class="slide slide-hook active" data-section="Hook" data-title="What’s that in Filipino?">
+        <div class="ambient-orb orb-a"></div><div class="ambient-orb orb-b"></div>
+        <div class="slide-inner hook-grid">
+          <div class="hook-copy">
+            <span class="kicker step">OPENING PROMPT</span>
+            <h1 class="display-title step">What’s that<br><em>in Filipino?</em></h1>
+            <p class="lead step">Before definitions, notice what your mind does when meaning arrives before the “right” language.</p>
+            <div class="discussion-cue step"><span>THINK</span> What language comes to you first when an idea is difficult?</div>
+          </div>
+          <div class="language-cloud" aria-label="Speech bubbles in several languages">
+            <span class="speech s1">Hello!</span>
+            <span class="speech s2">Kumusta!</span>
+            <span class="speech s3">Hola!</span>
+            <span class="speech s4">Bonjour!</span>
+            <span class="speech s5">Ciao!</span>
+            <span class="speech s6">Maayong adlaw!</span>
+          </div>
+        </div>
+        <div class="speaker-notes">Open with the source deck’s question, “What’s that in Filipino?” Invite teachers to notice their own spontaneous language choices before introducing terminology.</div>
+      </section>
+
+      <section class="slide slide-title" data-section="Hook" data-title="Translanguaging as Pedagogical Strategy">
+        <div class="paper-grid"></div>
+        <div class="slide-inner title-composition">
+          <div class="title-stamp step">PROFESSIONAL LEARNING · MULTILINGUAL CLASSROOMS</div>
+          <h1 class="hero-title step"><span>Trans</span><span>languaging</span></h1>
+          <p class="hero-subtitle step">as Pedagogical Strategy in Multilingual Classrooms</p>
+          <div class="title-annotation step">Language is not only the destination. It can also be the bridge.</div>
+          <div class="title-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+        <div class="speaker-notes">Title from the source presentation: “Translanguaging as Pedagogical Strategy in Multilingual Classrooms.”</div>
+      </section>
+
+      <section class="slide" data-section="Frame" data-title="Our learning path">
+        <div class="slide-inner centered">
+          <span class="kicker step">OBJECTIVES</span>
+          <h2 class="section-title step">Three moves for today</h2>
+          <div class="objective-path">
+            <article class="objective-card step"><b>01</b><h3>Define</h3><p>Define translanguaging and distinguish it from code-switching.</p></article>
+            <article class="objective-card step"><b>02</b><h3>Explain</h3><p>Explain the benefits of translanguaging in multilingual classrooms.</p></article>
+            <article class="objective-card step"><b>03</b><h3>Apply</h3><p>Identify classroom strategies that effectively use translanguaging.</p></article>
+          </div>
+        </div>
+        <div class="speaker-notes">Source objectives: define translanguaging and distinguish it from code-switching; explain its benefits in multilingual classrooms; identify classroom strategies that effectively use translanguaging.</div>
+      </section>
+
+      <section class="slide slide-context" data-section="Frame" data-title="The Philippine multilingual classroom">
+        <div class="slide-inner context-grid">
+          <div>
+            <span class="kicker step">CONTEXT</span>
+            <h2 class="section-title step">A classroom already living between languages.</h2>
+            <p class="lead step">The source deck frames Philippine bilingualism around Filipino and English, with code-switching described as a common social practice.</p>
+            <div class="policy-note step">
+              <span>POLICY NOTE</span>
+              <p>Executive Order No. 210 (May 17, 2003) strengthened the use of English as a medium of instruction while also pointing to educator training and learning resources.</p>
+            </div>
+          </div>
+          <div class="venn step" role="img" aria-label="Overlapping speech bubbles labeled Filipino and English, with a multilingual space in the overlap">
+            <div class="venn-circle filipino"><span>FILIPINO</span></div>
+            <div class="venn-circle english"><span>ENGLISH</span></div>
+            <div class="venn-overlap">meaning<br>moves</div>
+          </div>
+        </div>
+        <div class="speaker-notes">The source speaker notes say bilingualism in the Philippines centers on Filipino and English as official languages, with code-switching common. They also quote Executive Order No. 210 (May 17, 2003), which strengthened English as a medium of instruction and noted the importance of educator training and learning resources.</div>
+      </section>
+
+      <section class="slide" data-section="Concepts" data-title="Code-switching">
+        <div class="slide-inner concept-grid">
+          <div class="concept-word step">CODE<br><span>SWITCHING</span></div>
+          <div class="definition-card step">
+            <span class="eyebrow">Working definition</span>
+            <p>Shifting between two or more languages, dialects, or communication styles during conversation or across social and cultural settings.</p>
+          </div>
+          <div class="context-pills step" aria-label="Contexts for code-switching">
+            <span>fit in</span><span>express identity</span><span>navigate expectations</span><span>signal belonging</span>
+          </div>
+          <p class="source-line step">The source deck also describes code-switching as moving from one linguistic code to another depending on social context or conversational setting (Morrison, 2026).</p>
+        </div>
+        <div class="speaker-notes">Source slide 8 defines code-switching as shifting between languages, dialects, or communication styles during conversation or across social and cultural settings, used to fit in, express identity, or navigate social expectations. Slide 9 cites Morrison (2026) and emphasizes social context, identity, and belonging.</div>
+      </section>
+
+      <section class="slide slide-compare" data-section="Concepts" data-title="Code-switching vs translanguaging">
+        <div class="slide-inner">
+          <span class="kicker step">DISTINGUISH</span>
+          <h2 class="section-title step">Two lenses on multilingual meaning-making</h2>
+          <div class="compare-board step">
+            <article class="compare-side switch-side">
+              <span class="compare-tag">CODE-SWITCHING</span>
+              <div class="lane-visual" aria-hidden="true"><span>Language A</span><i>↔</i><span>Language B</span></div>
+              <p>Focuses on shifting from one linguistic code to another in response to context.</p>
+            </article>
+            <div class="versus">vs</div>
+            <article class="compare-side trans-side">
+              <span class="compare-tag">TRANSLANGUAGING</span>
+              <div class="repertoire-visual" aria-hidden="true"><span>A</span><span>B</span><span>ideas</span><span>meaning</span></div>
+              <p>Uses the learner’s full linguistic repertoire as a resource for understanding and communicating meaning.</p>
+            </article>
+          </div>
+          <div class="takeaway-strip step">Pedagogical shift: <strong>from policing boundaries</strong> to <strong>purposefully supporting meaning-making.</strong></div>
+        </div>
+        <div class="speaker-notes">Use the source distinction: code-switching is presented as shifting between codes; the translanguaging slides and misconception notes frame translanguaging as a pedagogical lens that supports the learner’s full repertoire for meaning-making.</div>
+      </section>
+
+      <section class="slide slide-trans" data-section="Concepts" data-title="What is translanguaging?">
+        <div class="slide-inner trans-grid">
+          <div>
+            <span class="kicker step">TRANSLANGUAGING</span>
+            <h2 class="section-title step">Move fluidly. Teach deliberately.</h2>
+            <blockquote class="definition-quote step">“The ability to move fluidly between languages and a pedagogical approach to teaching in which teachers support this ability.”</blockquote>
+            <span class="citation-chip step">Najarro, 2023 · as cited in the source deck</span>
+          </div>
+          <div class="fluid-map step" aria-label="Diagram of ideas flowing among languages into meaning">
+            <span class="bubble b1">Filipino</span><span class="bubble b2">English</span><span class="bubble b3">Cebuano</span><span class="bubble b4">prior knowledge</span>
+            <div class="meaning-core">MEANING</div>
+            <svg viewBox="0 0 500 430" aria-hidden="true"><path d="M80 85 C230 55, 320 110, 410 210 S260 360, 120 300 S35 160, 80 85Z"/><path d="M130 120 C180 230, 350 150, 380 290"/><path d="M80 300 C180 225, 270 340, 420 210"/></svg>
+          </div>
+        </div>
+        <div class="speaker-notes">Source slide 11: “Translanguaging is the ability to move fluidly between languages and a pedagogical approach to teaching in which teachers support this ability. (Najarro, 2023)”</div>
+      </section>
+
+      <section class="slide" data-section="Concepts" data-title="What translanguaging looks like">
+        <div class="slide-inner centered">
+          <span class="kicker step">SEE THE PROCESS</span>
+          <h2 class="section-title step">One idea. Three linguistic resources.</h2>
+          <div class="flow-sequence">
+            <article class="flow-card step"><b>1</b><span>THINK</span><h3>Cebuano</h3><p>Form the idea in a familiar language.</p></article>
+            <div class="flow-arrow step">→</div>
+            <article class="flow-card step"><b>2</b><span>DISCUSS</span><h3>Filipino</h3><p>Test the idea with a classmate.</p></article>
+            <div class="flow-arrow step">→</div>
+            <article class="flow-card step"><b>3</b><span>EXPRESS</span><h3>English</h3><p>Present the final answer in the target language.</p></article>
+          </div>
+          <div class="takeaway-strip step">This is translanguaging because different languages become <strong>resources for understanding and communicating meaning.</strong></div>
+        </div>
+        <div class="speaker-notes">Source speaker-note example: teacher asks for the main idea of a story; a student thinks in Cebuano, discusses with a classmate in Filipino, then expresses the final answer in English. The notes explicitly identify this as translanguaging.</div>
+      </section>
+
+      <section class="slide slide-benefits" data-section="Why it matters" data-title="Why translanguaging matters">
+        <div class="slide-inner">
+          <span class="kicker step">WHY IT MATTERS</span>
+          <h2 class="section-title step">Access first. Participation grows.</h2>
+          <div class="benefit-orbit step">
+            <div class="orbit-core">LEARNING<br><small>accessible · inclusive · meaningful</small></div>
+            <button class="benefit-chip c1" data-benefit="Understand difficult concepts more easily">understand</button>
+            <button class="benefit-chip c2" data-benefit="Build confidence in participating in class">confidence</button>
+            <button class="benefit-chip c3" data-benefit="Improve critical thinking">critical thinking</button>
+            <button class="benefit-chip c4" data-benefit="Connect prior knowledge with new learning">connect knowledge</button>
+            <button class="benefit-chip c5" data-benefit="Develop English proficiency over time">English growth</button>
+            <button class="benefit-chip c6" data-benefit="Value linguistic and cultural identities">identity</button>
+          </div>
+          <div id="benefitDetail" class="benefit-detail step">Tap a benefit to spotlight it.</div>
+        </div>
+        <div class="speaker-notes">Source benefits: understand difficult concepts more easily; build confidence in class participation; improve critical thinking; connect prior knowledge with new learning; develop English proficiency over time; value linguistic and cultural identities. Key idea in notes: translanguaging makes learning more accessible, inclusive, meaningful, and responsive to multilingual learners.</div>
+      </section>
+
+      <section class="slide slide-evidence" data-section="Why it matters" data-title="The full linguistic repertoire">
+        <div class="slide-inner quote-layout">
+          <div class="quote-mark step">“</div>
+          <blockquote class="big-quote step">Multilingual learners can use their <mark>full linguistic repertoire</mark> to construct meaning, support learning, participate actively, and express cultural identities.</blockquote>
+          <div class="quote-citation step">García & Li Wei, 2014; Rajendram, 2023 · as cited in the source deck</div>
+          <div class="annotation-line step">The goal is not to lower the cognitive demand — it is to widen access to it.</div>
+        </div>
+        <div class="speaker-notes">Source slide 13 states that translanguaging allows multilingual learners to use their full linguistic repertoire to construct meaning, support learning, participate actively, and express their cultural identities (García & Li Wei, 2014; Rajendram, 2023).</div>
+      </section>
+
+      <section class="slide" data-section="Strategies" data-title="Five classroom strategies">
+        <div class="slide-inner strategy-overview">
+          <span class="kicker step">CLASSROOM STRATEGIES</span>
+          <h2 class="section-title step">Five ways to make linguistic flexibility purposeful</h2>
+          <div class="strategy-grid">
+            <button class="strategy-tile step" data-strategy="think"><b>01</b><h3>Think in Filipino,<br>Write in English</h3><span>writing · reflection · analysis</span></button>
+            <button class="strategy-tile step" data-strategy="brainstorm"><b>02</b><h3>Bilingual<br>Brainstorming</h3><span>prewriting · problem-solving</span></button>
+            <button class="strategy-tile step" data-strategy="vocab"><b>03</b><h3>Multilingual<br>Vocabulary Wall</h3><span>academic vocabulary</span></button>
+            <button class="strategy-tile step" data-strategy="peer"><b>04</b><h3>Peer<br>Discussion</h3><span>interpretation · debate</span></button>
+            <button class="strategy-tile step" data-strategy="reading"><b>05</b><h3>Reading<br>Support</h3><span>difficult texts</span></button>
+          </div>
+        </div>
+        <div class="speaker-notes">This section consolidates source slides 15–19, which present five strategies: Think in Filipino, Write in English; Bilingual Brainstorming; Multilingual Vocabulary Wall; Peer Discussion; Reading Support.</div>
+      </section>
+
+      <section class="slide slide-strategy-lab" data-section="Strategies" data-title="Strategy lab">
+        <div class="slide-inner lab-grid">
+          <div class="lab-nav step" role="tablist" aria-label="Translanguaging strategies">
+            <button role="tab" aria-selected="true" data-tab="think">Think → Write</button>
+            <button role="tab" aria-selected="false" data-tab="brainstorm">Brainstorm</button>
+            <button role="tab" aria-selected="false" data-tab="vocab">Vocabulary Wall</button>
+            <button role="tab" aria-selected="false" data-tab="peer">Peer Discussion</button>
+            <button role="tab" aria-selected="false" data-tab="reading">Reading Support</button>
+          </div>
+          <article class="lab-panel step" id="strategyPanel" aria-live="polite">
+            <span class="eyebrow" id="strategyNumber">STRATEGY 01</span>
+            <h2 id="strategyTitle">Think in Filipino, Write in English</h2>
+            <p id="strategyBody">Reason or jot initial ideas in Filipino, then transform the thinking into an English response.</p>
+            <div class="best-for"><span>BEST FOR</span><strong id="strategyUse">writing · reflection · analysis</strong></div>
+            <div class="lab-visual" id="strategyVisual" aria-hidden="true"><span>IDEA</span><i>→</i><span>FILIPINO</span><i>→</i><span>ENGLISH OUTPUT</span></div>
+          </article>
+        </div>
+        <div class="speaker-notes">Use this tabbed “strategy lab” to discuss the five source strategies one at a time. Strategy details are taken directly from slides 15–19.</div>
+      </section>
+
+      <section class="slide slide-myths" data-section="Strategies" data-title="Misconceptions">
+        <div class="slide-inner">
+          <span class="kicker step">MYTH / REALITY</span>
+          <h2 class="section-title step">Four misconceptions worth flipping</h2>
+          <p class="subtle step">Tap each card to reveal the source deck’s response.</p>
+          <div class="myth-grid step">
+            <button class="flip-card" aria-pressed="false"><span class="front"><b>MYTH 01</b>“English only means better English.”</span><span class="back">Not necessarily. Access to prior knowledge can support stronger target-language performance.</span></button>
+            <button class="flip-card" aria-pressed="false"><span class="front"><b>MYTH 02</b>“It means students are lazy.”</span><span class="back">Strategic linguistic flexibility can support cognitive access while maintaining rigorous outcomes.</span></button>
+            <button class="flip-card" aria-pressed="false"><span class="front"><b>MYTH 03</b>“It is just code-switching.”</span><span class="back">The pedagogical lens focuses on the learner’s full repertoire for meaning-making.</span></button>
+            <button class="flip-card" aria-pressed="false"><span class="front"><b>MYTH 04</b>“Teachers must speak every language.”</span><span class="back">Peer collaboration and multilingual resources can distribute linguistic expertise.</span></button>
+          </div>
+        </div>
+        <div class="speaker-notes">The four misconception/reality pairs come directly from source slide 20 and its speaker notes.</div>
+      </section>
+
+      <section class="slide slide-challenge" data-section="Apply" data-title="What would you do? · Scenario 1">
+        <div class="slide-inner challenge-layout">
+          <span class="kicker step">WHAT WOULD YOU DO? · 01</span>
+          <h2 class="challenge-question step">A Grade 10 learner has strong ideas about a literary text but cannot begin an English paragraph. What would you allow first?</h2>
+          <div class="quiz-options step" data-quiz="q1">
+            <button data-correct="true"><b>A</b><span><strong>Think in Filipino, then write in English.</strong><small>Use familiar-language thinking as a bridge to target-language output.</small></span></button>
+            <button><b>B</b><span><strong>Require English from the first brainstorm.</strong><small>Keep every stage in English to maximize exposure.</small></span></button>
+            <button><b>C</b><span><strong>Skip the writing.</strong><small>Reduce the demand because the learner is struggling.</small></span></button>
+            <button><b>D</b><span><strong>Translate the entire paragraph.</strong><small>Supply the final response for the learner.</small></span></button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite">Choose an option to reveal the rationale.</div>
+        </div>
+        <div class="speaker-notes">Source answer rationale: Think Filipino → Write English creates a bridge. The learner can develop the idea using a familiar linguistic resource, then transform that thinking into the required English output. The learning objective remains intact.</div>
+      </section>
+
+      <section class="slide slide-challenge" data-section="Apply" data-title="What would you do? · Scenario 2">
+        <div class="slide-inner challenge-layout">
+          <span class="kicker step">WHAT WOULD YOU DO? · 02</span>
+          <h2 class="challenge-question step">Students understand the plot but cannot explain why a character behaves a certain way. Which strategy best unlocks the language they need?</h2>
+          <div class="quiz-options compact step" data-quiz="q2">
+            <button><b>A</b><span><strong>Think → Write</strong><small>Bridge familiar-language thinking to English writing.</small></span></button>
+            <button><b>B</b><span><strong>Bilingual Brainstorming</strong><small>Generate ideas in any familiar language.</small></span></button>
+            <button data-correct="true"><b>C</b><span><strong>Multilingual Vocabulary Wall</strong><small>Surface terms for motivation, emotion, behavior, and evidence.</small></span></button>
+            <button><b>D</b><span><strong>Reading Support</strong><small>Use annotation, paraphrasing, glossaries, and discussion.</small></span></button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite">Choose a strategy, then compare it with the speaker-note rationale.</div>
+        </div>
+        <div class="speaker-notes">The source slide repeats the previous scenario’s A–D options, but its speaker notes identify a multilingual vocabulary wall as the strongest move because it can surface language for motivation, emotion, and behavior, which the teacher can connect to evidence in the English text. This web version aligns the interactive choices with that speaker-note rationale.</div>
+      </section>
+
+      <section class="slide slide-challenge" data-section="Apply" data-title="What would you do? · Scenario 3">
+        <div class="slide-inner challenge-layout">
+          <span class="kicker step">WHAT WOULD YOU DO? · 03</span>
+          <h2 class="challenge-question step">A group debates a literary interpretation more deeply in Filipino but must present the conclusion in English. What should the teacher do?</h2>
+          <div class="quiz-options compact step" data-quiz="q3">
+            <button><b>A</b><span><strong>English-only discussion</strong><small>Require the target language throughout.</small></span></button>
+            <button data-correct="true"><b>B</b><span><strong>Allow flexible peer discussion</strong><small>Then synthesize the group’s conclusion in English.</small></span></button>
+            <button><b>C</b><span><strong>Reduce the task</strong><small>Shorten the interpretation because the discussion is difficult.</small></span></button>
+            <button><b>D</b><span><strong>Provide the final interpretation</strong><small>Remove the language barrier by supplying the answer.</small></span></button>
+          </div>
+          <div class="quiz-feedback" aria-live="polite">Choose an option to reveal the rationale.</div>
+        </div>
+        <div class="speaker-notes">Source speaker notes: allowing flexible peer discussion can support complex reasoning. The group can then synthesize the agreed interpretation into an English evidence-based report. The original slide repeats the previous A–D options; this web version aligns the options with the stated rationale.</div>
+      </section>
+
+      <section class="slide slide-ppst" data-section="Professional practice" data-title="PPST Domain 1">
+        <div class="slide-inner ppst-grid">
+          <div>
+            <span class="kicker step">PROFESSIONAL PRACTICE</span>
+            <h2 class="section-title step">PPST Domain 1</h2>
+            <p class="lead step">The source deck connects translanguaging with research-informed, learner-centered, contextualized teaching.</p>
+          </div>
+          <div class="ppst-stack">
+            <article class="ppst-item step"><b>01</b><span>Apply research-based teaching strategies</span></article>
+            <article class="ppst-item step"><b>02</b><span>Use learner-centered pedagogy</span></article>
+            <article class="ppst-item step"><b>03</b><span>Adapt instruction to learners’ linguistic backgrounds</span></article>
+            <article class="ppst-item step"><b>04</b><span>Promote meaningful learning through contextualized instruction</span></article>
+            <article class="ppst-item step"><b>05</b><span>Foster higher-order thinking and active participation</span></article>
+          </div>
+        </div>
+        <div class="speaker-notes">Source slide 25 lists these five PPST Domain 1 connections: apply research-based teaching strategies; use learner-centered pedagogy; adapt instruction to learners’ linguistic backgrounds; promote meaningful learning through contextualized instruction; foster higher-order thinking and active participation.</div>
+      </section>
+
+      <section class="slide slide-recap" data-section="Close" data-title="The idea in one sentence">
+        <div class="slide-inner recap-layout">
+          <span class="kicker step">RECAP</span>
+          <h2 class="recap-question step">If you remember only one thing…</h2>
+          <div class="recap-sentence step">
+            <span>Translanguaging</span>
+            <span>lets learners use</span>
+            <strong>all their language resources</strong>
+            <span>to reach</span>
+            <strong>rigorous meaning + target-language output.</strong>
+          </div>
+          <div class="mini-recap step"><span>ACCESS</span><i>→</i><span>THINKING</span><i>→</i><span>PARTICIPATION</span><i>→</i><span>OUTPUT</span></div>
+        </div>
+        <div class="speaker-notes">Synthesize the source deck’s recurring idea: translanguaging uses the full linguistic repertoire to support meaning-making without abandoning the target-language learning goal.</div>
+      </section>
+
+      <section class="slide slide-reflection" data-section="Close" data-title="Reflection">
+        <div class="slide-inner reflection-layout">
+          <span class="kicker step">REFLECT</span>
+          <h2 class="reflection-prompt step">Where could one strategic language bridge make your next lesson more accessible?</h2>
+          <div class="reflection-choices step">
+            <button data-reflect="before">Before the task</button>
+            <button data-reflect="during">During thinking</button>
+            <button data-reflect="discussion">During discussion</button>
+            <button data-reflect="output">Before final output</button>
+          </div>
+          <div id="reflectionResponse" class="reflection-response step">Choose a moment — then name one strategy you could try there.</div>
+          <p class="subtle step">Pair-share: “I will try ______ because it can help learners ______.”</p>
+        </div>
+        <div class="speaker-notes">This reflection prompt is a facilitation device built from the source strategies. It does not add a new factual claim; it asks participants to transfer one of the presented strategies to their own teaching.</div>
+      </section>
+
+      <section class="slide slide-references" data-section="Close" data-title="References">
+        <div class="slide-inner references-layout">
+          <div>
+            <span class="kicker step">SOURCE DECK</span>
+            <h2 class="section-title step">References</h2>
+            <p class="subtle step">Bibliography reproduced from the provided presentation.</p>
+          </div>
+          <div class="reference-list step">
+            <p>Cenoz, J., &amp; Gorter, D. (2022). <em>Pedagogical translanguaging and its application to language classes.</em> Language Teaching Research, 26(6), 1307–1323.</p>
+            <p>García, O., &amp; Wei, L. (2014). <em>Translanguaging: Language, bilingualism and education.</em> Palgrave Macmillan.</p>
+            <p>García, O., Johnson, S. I., &amp; Seltzer, K. (2017). <em>The translanguaging classroom: Leveraging student bilingualism for learning.</em> Caslon.</p>
+            <p>Department of Education. (2017). <em>Philippine Professional Standards for Teachers (PPST).</em></p>
+            <p>Department of Education. (2016). <em>K to 12 Curriculum Guide for English.</em></p>
+            <p>UNESCO. (2025). <em>Languages matter: Global guidance on multilingual education.</em></p>
+            <div class="reference-note">In-slide citations also appearing in the source deck: Najarro (2023), Morrison (2026), and Rajendram (2023). Their full entries were not included on the source deck’s reference slide.</div>
+          </div>
+        </div>
+        <div class="speaker-notes">References reproduced from source slide 26. Note for source integrity: Najarro (2023), Morrison (2026), and Rajendram (2023) are cited in earlier source slides but do not have full entries on the provided reference slide.</div>
+      </section>
+
+      <section class="slide slide-close" data-section="Close" data-title="Thank you">
+        <div class="slide-inner close-layout">
+          <div class="close-mark step">TL</div>
+          <h2 class="step">Language can be a bridge<br><em>before it becomes the destination.</em></h2>
+          <p class="step">Thank you.</p>
+          <button class="primary-button step" id="restartEndBtn">↺ Run it again</button>
+        </div>
+        <div class="speaker-notes">Closing line summarizes the presentation’s pedagogical framing. Invite final questions or discussion.</div>
+      </section>
+    </main>
+
+    <footer class="deck-controls" aria-label="Slide navigation">
+      <button id="prevBtn" class="nav-button" aria-label="Previous step or slide">←</button>
+      <div class="progress-cluster">
+        <div class="progress-meta"><span id="slideCounter">01 / 19</span><span id="slideTitle">What’s that in Filipino?</span></div>
+        <div class="progress-track" aria-hidden="true"><div id="progressBar" class="progress-bar"></div></div>
+      </div>
+      <button id="nextBtn" class="nav-button" aria-label="Next step or slide">→</button>
+    </footer>
+
+    <div class="tap-hint" id="tapHint" aria-hidden="true">Tap → to reveal</div>
+  </div>
+
+  <script defer src="./src/main.js"></script>
+</body>
+</html>
