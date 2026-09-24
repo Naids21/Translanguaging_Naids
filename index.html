@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#081426" />
+  <meta name="description" content="A 15-minute interactive professional learning session on translanguaging for English teachers." />
+  <title>Translanguaging — A Night Sky of Ideas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --navy:#081426;--night:#102A50;--cobalt:#173D73;--royal:#2458A6;
+  --gold:#F4C95D;--moon:#FFD978;--cream:#F5EBD4;--muted:#9FAFC4;
+  --teal:#326A73;--cypress:#172F2B;--ink:#07101f;
+  --glass:rgba(8,20,38,.72);--glass2:rgba(16,42,80,.55);--line:rgba(244,201,93,.28);
+  --shadow:0 24px 70px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--navy)}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden}
+button,a{font:inherit}
+button{color:inherit}
+a{color:var(--moon)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--moon);outline-offset:4px}
+.skip-link{position:fixed;left:1rem;top:-100px;z-index:1000;background:var(--cream);color:var(--ink);padding:.75rem 1rem;border-radius:.5rem}
+.skip-link:focus{top:1rem}
+
+.ambient{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(circle at 75% 20%,rgba(36,88,166,.26),transparent 26%),linear-gradient(180deg,#06101e,#081426 48%,#060d19)}
+.ambient__stars{position:absolute;inset:0;opacity:.75}
+.star-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--moon);box-shadow:0 0 12px rgba(255,217,120,.85);animation:twinkle 5s ease-in-out infinite}
+.ambient__swirl{position:absolute;width:42vw;height:42vw;border:2px solid rgba(159,175,196,.07);border-radius:48% 52% 58% 42%;filter:blur(.2px);animation:slowRotate 80s linear infinite}
+.ambient__swirl--one{right:-12vw;top:-14vw}.ambient__swirl--two{left:-18vw;bottom:-18vw;animation-direction:reverse;animation-duration:110s}
+@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.35)}}
+@keyframes slowRotate{to{transform:rotate(360deg)}}
+
+.topbar{position:fixed;z-index:50;top:0;left:0;right:0;height:68px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 clamp(16px,3vw,42px);background:linear-gradient(180deg,rgba(5,13,25,.92),rgba(5,13,25,.45),transparent);backdrop-filter:blur(10px);transition:opacity .3s ease,transform .3s ease}
+.brand{border:0;background:none;padding:0;display:flex;gap:.65rem;align-items:center;font-size:.78rem;letter-spacing:.16em;font-weight:700;cursor:pointer;justify-self:start}.brand__star{color:var(--gold);font-size:1.1rem}
+.topbar__actions{justify-self:end;display:flex;align-items:center;gap:.65rem}
+.icon-btn{width:38px;height:38px;border:1px solid rgba(245,235,212,.16);background:rgba(8,20,38,.42);border-radius:50%;cursor:pointer;backdrop-filter:blur(12px)}
+.session-clock{font-variant-numeric:tabular-nums;font-size:.78rem;letter-spacing:.12em;color:var(--muted);min-width:52px;text-align:center}
+.constellation{display:flex;align-items:center;gap:.15rem}.constellation i{display:block;width:clamp(10px,2.1vw,38px);height:1px;background:rgba(245,235,212,.17);position:relative;overflow:hidden}.constellation i::after{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left;background:var(--gold);transition:transform .4s ease}.constellation i.is-lit::after{transform:scaleX(1)}
+.constellation__node{border:0;background:none;padding:.25rem;color:rgba(245,235,212,.28);cursor:pointer;font-size:.8rem;transition:.25s}.constellation__node.is-past{color:rgba(244,201,93,.65)}.constellation__node.is-active{color:var(--moon);text-shadow:0 0 14px rgba(255,217,120,.9);transform:scale(1.35)}
+.mobile-only{display:none}.mobile-menu{display:none}
+
+.deck{position:relative;z-index:1;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}.deck::-webkit-scrollbar{display:none}
+.scene{position:relative;min-height:100dvh;scroll-snap-align:start;overflow:hidden;isolation:isolate;display:flex;align-items:center;padding:82px clamp(20px,4vw,70px) 44px}
+.scene::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 85% 20%,rgba(36,88,166,.18),transparent 34%),linear-gradient(180deg,rgba(8,20,38,.45),rgba(8,20,38,.94))}
+.scene__inner{width:min(1240px,100%);margin:auto;position:relative;z-index:2}
+.centered{text-align:center}.narrow{max-width:900px}.section-kicker{font-size:.72rem;letter-spacing:.22em;font-weight:700;color:var(--gold);text-transform:uppercase;margin:0 0 1.25rem}.display{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(3rem,6vw,6.8rem);line-height:.91;letter-spacing:-.035em;margin:.1em 0 .35em;text-wrap:balance}.display--soft{font-size:clamp(2.1rem,4.7vw,5rem);color:var(--muted)}.gold{color:var(--moon);font-style:italic}.quiet{color:var(--muted);font-size:clamp(1rem,1.4vw,1.25rem)}.lead{font-size:clamp(1rem,1.7vw,1.35rem);color:#dce5ef;max-width:760px}
+
+.reveal{opacity:0;transform:translateY(18px);pointer-events:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}.reveal.is-visible{opacity:1;transform:none;pointer-events:auto}.reveal:nth-child(2){transition-delay:.03s}
+.reveal-controls{margin-top:2rem}.reveal-controls--floating{position:absolute;right:clamp(20px,4vw,70px);bottom:22px;z-index:8}
+.primary-btn,.secondary-btn{border-radius:999px;padding:.8rem 1.2rem;cursor:pointer;transition:.2s ease;font-weight:700}.primary-btn{border:1px solid rgba(255,217,120,.55);background:linear-gradient(135deg,var(--gold),var(--moon));color:#102039;box-shadow:0 10px 34px rgba(244,201,93,.24)}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 14px 42px rgba(244,201,93,.32)}.secondary-btn{border:1px solid rgba(245,235,212,.16);background:rgba(8,20,38,.64);color:var(--cream);backdrop-filter:blur(10px)}.secondary-btn:hover{border-color:rgba(244,201,93,.48);box-shadow:0 0 24px rgba(244,201,93,.10)}
+
+.art-bg{position:absolute;inset:-3%;z-index:-4;background-size:cover;background-position:center;animation:artDrift 24s ease-in-out infinite alternate;transform:scale(1.03)}
+.art-bg--starry{background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1920px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg')}
+.art-bg--rhone{background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Starry_Night_Over_the_Rhone.jpg/1920px-Starry_Night_Over_the_Rhone.jpg');background-position:center 55%}
+@keyframes artDrift{from{transform:scale(1.035) translate3d(0,0,0)}to{transform:scale(1.075) translate3d(-.4%,.25%,0)}}
+.hero-vignette,.closing-overlay{position:absolute;inset:0;z-index:-3;background:linear-gradient(90deg,rgba(5,12,23,.91) 0%,rgba(5,12,23,.66) 46%,rgba(5,12,23,.26) 72%),linear-gradient(0deg,rgba(5,12,23,.72),transparent 50%)}
+.hero{max-width:1100px;margin-left:max(0px,4vw)}.eyebrow{font-size:.76rem;letter-spacing:.24em;color:var(--moon);font-weight:700}.hero__title{font-family:"Cormorant Garamond",serif;font-size:clamp(3.6rem,8vw,8.2rem);line-height:.75;letter-spacing:-.055em;margin:.14em 0 .22em;max-width:980px}.hero__title span,.hero__title em{display:block}.hero__title em{color:var(--moon);font-weight:500}.hero__subtitle{font-size:clamp(1rem,1.7vw,1.35rem);color:#dde6ee;max-width:720px;line-height:1.55}.hero__meta{display:flex;gap:.55rem;flex-wrap:wrap;margin:1.5rem 0 1.6rem}.pill{padding:.45rem .7rem;border:1px solid rgba(255,217,120,.22);background:rgba(8,20,38,.52);border-radius:999px;font-size:.75rem;color:#dce4ef}.art-credit{position:absolute;bottom:14px;left:clamp(20px,4vw,70px);z-index:4;margin:0;font-size:.62rem;color:rgba(245,235,212,.55);max-width:80%}
+
+.scene--dark::before{background:radial-gradient(circle at 50% 48%,rgba(36,88,166,.15),transparent 31%),linear-gradient(180deg,#050e1c,#081426)}.question-stack{display:grid;gap:.4rem}.silence{font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,10vw,9.5rem);margin:.1rem 0;color:var(--moon);font-style:italic}.glass-card{border:1px solid rgba(244,201,93,.22);background:linear-gradient(135deg,rgba(16,42,80,.52),rgba(8,20,38,.78));box-shadow:var(--shadow);backdrop-filter:blur(18px);border-radius:24px;padding:clamp(1.2rem,2.5vw,2.3rem)}.reflection-card{max-width:760px;margin:1rem auto 0;font-size:clamp(1rem,1.55vw,1.25rem);line-height:1.65}.reflection-card strong{color:var(--moon)}
+
+.scene--split::before{background:linear-gradient(110deg,#071321 0%,#0b2343 55%,#071321 100%)}.split-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,6rem);align-items:center}.definition{font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,2.6vw,2.55rem);line-height:1.24;color:#f7f0df;max-width:740px}.speaker-line{color:#c7d3e1;line-height:1.6}.mini-compare{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.5rem}.compare-item{border-top:1px solid rgba(159,175,196,.28);padding:1rem 0;color:#d7e0ea}.compare-item--gold{border-top-color:rgba(244,201,93,.7)}.compare-item strong{display:block;margin:.45rem 0;color:var(--cream)}.compare-item p{margin:0;font-size:.9rem;line-height:1.5;color:var(--muted)}.compare-label{font-size:.65rem;letter-spacing:.18em;color:var(--muted);font-weight:800}.compare-item--gold .compare-label{color:var(--gold)}
+.constellation-diagram{aspect-ratio:1/1;width:min(100%,520px);margin:auto;border-radius:50%;background:radial-gradient(circle,rgba(36,88,166,.26),rgba(8,20,38,.08) 52%,transparent 67%)}.constellation-diagram svg{width:100%;height:100%;overflow:visible}.const-line{fill:none;stroke:rgba(244,201,93,.48);stroke-width:2;stroke-dasharray:8 8;animation:dash 18s linear infinite}.const-star{fill:var(--moon);filter:url(#glow)}.const-star--core{fill:var(--gold)}.constellation-diagram text{fill:#aab7c6;font-size:15px;font-family:Inter;font-weight:700;letter-spacing:1px}.constellation-diagram .core-label{fill:#fff5d8;font-size:18px;letter-spacing:2px}.constellation-diagram .core-label:last-child{fill:var(--moon);font-size:23px}@keyframes dash{to{stroke-dashoffset:-200}}
+
+.scene--policy::before{background:linear-gradient(180deg,rgba(8,20,38,.98),rgba(10,31,58,.96)),radial-gradient(circle at 20% 20%,rgba(244,201,93,.12),transparent 32%)}.policy-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,4vw,5rem);align-items:start}.policy-note{font-size:1.05rem;line-height:1.7;color:#c8d4e2;max-width:520px}.policy-timeline{display:grid;gap:.75rem}.policy-card{position:relative;border:1px solid rgba(245,235,212,.13);background:rgba(9,24,45,.73);border-radius:22px;padding:1.25rem 1.4rem 1.15rem 5.6rem;min-height:118px}.policy-card::before{content:"";position:absolute;left:3.4rem;top:0;bottom:-.78rem;width:1px;background:linear-gradient(var(--gold),rgba(244,201,93,.08))}.policy-card:last-child::before{bottom:50%}.policy-card::after{content:"✦";position:absolute;left:2.98rem;top:1.4rem;color:var(--moon);text-shadow:0 0 16px var(--gold)}.policy-card--featured{border-color:rgba(244,201,93,.38);background:linear-gradient(135deg,rgba(26,58,99,.82),rgba(8,20,38,.88))}.policy-card h3{margin:.1rem 0 .35rem;font-size:1.1rem}.policy-card p{margin:0;color:#c9d5e2;line-height:1.45;font-size:.88rem}.policy-card a{display:inline-block;margin-top:.5rem;font-size:.78rem;text-decoration:none}.policy-year{position:absolute;left:.8rem;top:1.45rem;color:var(--gold);font-size:.7rem;font-weight:800;letter-spacing:.08em}.policy-card .micro{margin-top:.45rem;color:var(--moon);font-weight:700}.policy-caveat{grid-column:1/-1;margin-top:.2rem;padding:.8rem 1rem;border-left:3px solid var(--gold);background:rgba(244,201,93,.06);color:#cfd9e4;font-size:.85rem;line-height:1.5}.policy-caveat strong{color:var(--moon)}
+
+.scene--benefits::before{background:radial-gradient(circle at 15% 15%,rgba(50,106,115,.22),transparent 34%),linear-gradient(145deg,#06111e,#0e2a4a)}.pathway{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:.65rem;margin:2rem 0}.path-step{min-height:140px;border:1px solid rgba(245,235,212,.12);background:rgba(8,20,38,.54);border-radius:18px;padding:1rem;display:flex;flex-direction:column;justify-content:center}.path-step span{color:var(--gold);font-size:.7rem;font-weight:800;letter-spacing:.12em}.path-step strong{font-family:"Cormorant Garamond",serif;font-size:1.8rem;margin:.25rem 0}.path-step small{color:var(--muted);line-height:1.45}.path-line{width:28px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(244,201,93,.18));position:relative}.path-line::after{content:"✦";position:absolute;right:-4px;top:-9px;color:var(--gold);font-size:.85rem}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.benefit-card{padding:1.2rem;border-top:1px solid rgba(244,201,93,.36);background:linear-gradient(180deg,rgba(244,201,93,.05),transparent)}.benefit-card span{color:var(--gold)}.benefit-card h3{font-family:"Cormorant Garamond",serif;font-size:1.8rem;margin:.4rem 0}.benefit-card p{margin:0;color:var(--muted);line-height:1.5}
+
+.scene--strategies::before{background:linear-gradient(180deg,rgba(7,17,31,.98),rgba(6,18,32,.94))}.art-strip{position:absolute;right:-8vw;top:0;width:42vw;height:100%;z-index:-1;background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg') center/cover;opacity:.12;filter:saturate(.8);mask-image:linear-gradient(90deg,transparent,#000 44%)}.strategy-stack{display:grid;gap:.75rem;margin-top:1.2rem;max-width:1080px}.strategy-card{display:grid;grid-template-columns:70px 1fr minmax(240px,.65fr);gap:1rem;align-items:center;border:1px solid rgba(245,235,212,.13);background:linear-gradient(90deg,rgba(16,42,80,.58),rgba(8,20,38,.7));border-radius:20px;padding:1rem 1.2rem}.strategy-no{font-family:"Cormorant Garamond",serif;font-size:2.8rem;color:var(--gold);font-style:italic}.strategy-card h3{margin:0 0 .25rem;font-family:"Cormorant Garamond",serif;font-size:1.65rem}.strategy-card p{margin:0;color:#becbda;line-height:1.45;font-size:.9rem}.strategy-example{border-left:1px solid rgba(244,201,93,.28);padding-left:1rem;color:#eee6d4;font-size:.85rem;line-height:1.45}.takeaway-band{margin-top:1rem;display:flex;gap:1rem;align-items:baseline;border-top:1px solid rgba(244,201,93,.28);padding-top:1rem}.takeaway-band span{color:var(--gold);font-size:.65rem;letter-spacing:.2em;font-weight:800}.takeaway-band strong{font-family:"Cormorant Garamond",serif;font-size:1.45rem}
+
+.scene--scenario::before{background:radial-gradient(circle at 70% 50%,rgba(244,201,93,.07),transparent 27%),linear-gradient(145deg,#06101d,#0a2443)}.scenario-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,5rem);align-items:center}.student-quote{padding:1rem 0}.student-quote p{color:var(--muted);margin:.2rem 0}.student-quote blockquote{font-family:"Cormorant Garamond",serif;font-size:clamp(1.4rem,2.4vw,2.2rem);margin:.35rem 0 1rem;padding-left:1rem;border-left:2px solid var(--gold);color:#f7f0df}.scenario-options{display:grid;gap:.65rem}.scenario-options button{text-align:left;border:1px solid rgba(245,235,212,.14);background:rgba(8,20,38,.6);border-radius:16px;padding:.85rem 1rem;cursor:pointer;color:#dfe7ef;display:flex;gap:.75rem;line-height:1.45;transition:.2s}.scenario-options button span{color:var(--gold);font-weight:800}.scenario-options button:hover,.scenario-options button.is-selected{transform:translateX(5px);border-color:rgba(244,201,93,.5);background:rgba(23,61,115,.56)}.scenario-feedback{display:grid;gap:1.2rem;justify-items:center}.moon-timer{display:grid;justify-items:center;gap:.7rem}.moon{width:160px;height:160px;border-radius:50%;display:grid;place-items:center;font-size:2rem;font-weight:700;color:#13213a;background:radial-gradient(circle at 40% 35%,#fff2b8,#ffd978 46%,#cba53f 78%,#8e6d20);box-shadow:0 0 50px rgba(255,217,120,.22),inset -14px -12px 25px rgba(97,66,5,.2)}.moon-timer button{border:0;background:none;color:var(--moon);cursor:pointer;text-decoration:underline;text-underline-offset:4px}.feedback-card{width:min(100%,430px);min-height:190px;border:1px solid rgba(244,201,93,.24);background:rgba(8,20,38,.68);border-radius:22px;padding:1.4rem;box-shadow:var(--shadow);line-height:1.6;color:#d7e1ea}.feedback-card strong{color:var(--moon)}.tiny-star{color:var(--gold);font-size:1.3rem}
+
+.scene--closing{padding-bottom:60px}.closing-overlay{background:linear-gradient(180deg,rgba(5,12,23,.45),rgba(5,12,23,.77) 55%,rgba(5,12,23,.9))}.closing-content{max-width:980px}.closing-line{font-family:"Cormorant Garamond",serif;font-size:clamp(3.3rem,7.2vw,7.6rem);line-height:.92;margin:.1em 0 .3em;text-wrap:balance}.closing-line em{color:var(--moon)}.reflection-question{font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,2.5vw,2.4rem);line-height:1.3;color:#f0eadb}.closing-mantra{display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;margin:1.3rem 0;color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:.18em}.final-words{font-family:"Cormorant Garamond",serif;font-size:1.45rem;line-height:1.4}.final-words p{margin:.1rem}.final-words strong{display:block;margin-top:.55rem;font-size:1.75rem;color:var(--moon)}.closing-actions{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.4rem}
+
+.advance-hint{position:fixed;right:18px;bottom:16px;z-index:45;border:1px solid rgba(245,235,212,.12);background:rgba(8,20,38,.52);color:rgba(245,235,212,.55);border-radius:999px;padding:.4rem .65rem;font-size:.6rem;letter-spacing:.14em;pointer-events:none}
+.sources-dialog{width:min(760px,calc(100% - 32px));border:1px solid rgba(244,201,93,.32);border-radius:24px;background:#09182b;color:var(--cream);padding:0;box-shadow:0 40px 120px rgba(0,0,0,.55)}.sources-dialog::backdrop{background:rgba(1,6,13,.72);backdrop-filter:blur(8px)}.sources-dialog form{padding:2rem;position:relative}.sources-dialog h2{font-family:"Cormorant Garamond",serif;font-size:2.4rem;margin:.2rem 0 1rem}.dialog-close{position:absolute;right:1rem;top:1rem;width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,235,212,.15);background:none;color:var(--cream);cursor:pointer;font-size:1.3rem}.source-list{display:grid;gap:.65rem}.source-list a{display:grid;text-decoration:none;padding:.85rem 1rem;border:1px solid rgba(245,235,212,.1);border-radius:14px;background:rgba(255,255,255,.025)}.source-list a:hover{border-color:rgba(244,201,93,.36)}.source-list strong{color:var(--moon)}.source-list span{font-size:.82rem;color:var(--muted);margin-top:.18rem}.source-note{font-size:.78rem;color:var(--muted);line-height:1.5;margin-top:1rem}
+
+@media (max-width:900px){
+  .topbar{grid-template-columns:1fr auto}.constellation{display:none}.mobile-only{display:inline-grid;place-items:center}.mobile-menu{position:fixed;z-index:49;top:64px;right:12px;width:min(280px,calc(100% - 24px));padding:.65rem;display:grid;gap:.3rem;background:rgba(7,17,31,.96);border:1px solid rgba(245,235,212,.14);border-radius:18px;box-shadow:var(--shadow);transform:translateY(-8px) scale(.98);opacity:0;pointer-events:none;transition:.2s}.mobile-menu.is-open{transform:none;opacity:1;pointer-events:auto}.mobile-menu button{background:none;border:0;color:#dce5ee;text-align:left;padding:.75rem;border-radius:10px;cursor:pointer}.mobile-menu button:hover{background:rgba(36,88,166,.22)}
+  .split-grid,.policy-layout,.scenario-layout{grid-template-columns:1fr}.constellation-diagram{width:min(72vw,380px)}.policy-note{max-width:none}.policy-caveat{grid-column:auto}.pathway{grid-template-columns:1fr;gap:.45rem}.path-line{height:24px;width:1px;margin:auto;background:linear-gradient(var(--gold),rgba(244,201,93,.18))}.path-line::after{right:-6px;top:9px}.benefit-grid{grid-template-columns:1fr 1fr}.strategy-card{grid-template-columns:58px 1fr}.strategy-example{grid-column:2;border-left:0;border-top:1px solid rgba(244,201,93,.2);padding: .7rem 0 0}.scene--scenario{padding-bottom:90px}.moon{width:120px;height:120px;font-size:1.5rem}.scenario-feedback{grid-template-columns:auto 1fr;align-items:center}.feedback-card{min-height:0}.reveal-controls--floating{right:20px;bottom:18px}
+}
+@media (max-width:620px){
+  .topbar{height:60px;padding:0 14px}.brand{font-size:.68rem}.session-clock{display:none}.scene{padding:70px 18px 72px;align-items:flex-start}.scene__inner{margin:auto 0}.display{font-size:clamp(2.7rem,14vw,4.6rem)}.hero{margin:auto;align-self:center}.hero__title{font-size:clamp(3.7rem,18vw,6rem);line-height:.78}.hero__subtitle{font-size:.95rem}.hero__meta{margin:1rem 0}.art-bg--starry{background-position:58% center}.eyebrow{font-size:.62rem;line-height:1.5}.mini-compare{grid-template-columns:1fr}.benefit-grid{grid-template-columns:1fr}.strategy-card{grid-template-columns:46px 1fr;padding:.85rem}.strategy-no{font-size:2.2rem}.takeaway-band{align-items:flex-start;flex-direction:column}.scenario-feedback{grid-template-columns:1fr}.moon{width:100px;height:100px}.feedback-card{font-size:.88rem}.art-credit{font-size:.52rem}.advance-hint{display:none}.reveal-controls--floating{bottom:12px}.policy-card{padding-left:4.5rem}.policy-card::before{left:2.65rem}.policy-card::after{left:2.23rem}.policy-year{left:.55rem}.closing-line{font-size:clamp(3.4rem,15vw,5.2rem)}
+}
+@media (orientation:landscape) and (max-height:600px){
+  .scene{padding-top:64px;padding-bottom:42px}.hero__title{font-size:clamp(3rem,9vh,5.2rem);line-height:.8}.hero__subtitle{font-size:.85rem}.display{font-size:clamp(2.4rem,9vh,4.8rem)}.policy-card{min-height:0;padding-top:.8rem;padding-bottom:.8rem}.strategy-card{padding:.65rem 1rem}.moon{width:96px;height:96px;font-size:1.25rem}.feedback-card{min-height:120px}.section-kicker{margin-bottom:.6rem}.art-credit{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.art-bg{transform:none}.ambient__swirl{display:none}
+}
+
+  
+/* ===== READABILITY PASS: projector-first, split-content layout ===== */
+.scene{overflow-x:clip;overflow-y:visible;padding:86px clamp(28px,4.5vw,76px) 48px}
+.scene__inner{width:min(1120px,100%)}
+.section-kicker{font-size:clamp(.82rem,1vw,.98rem);line-height:1.4;margin-bottom:1.05rem}
+.display{font-size:clamp(3.15rem,5.1vw,5.4rem);line-height:.96;margin:.05em 0 .32em}
+.display--soft{font-size:clamp(2.4rem,4vw,4.2rem)}
+.quiet,.lead,.speaker-line{font-size:clamp(1.12rem,1.4vw,1.34rem);line-height:1.6}
+.definition{font-size:clamp(1.85rem,2.35vw,2.45rem);line-height:1.3}
+.glass-card{padding:clamp(1.35rem,2.2vw,2rem)}
+.reflection-card{font-size:clamp(1.18rem,1.45vw,1.42rem);line-height:1.65}
+.secondary-btn,.primary-btn{font-size:clamp(.98rem,1.1vw,1.08rem);min-height:46px}
+.reveal-controls{margin-top:1.35rem}
+.scene-controls{position:absolute;left:50%;transform:translateX(-50%);bottom:24px;z-index:8;margin:0}
+.key-card{margin-top:1.25rem;max-width:700px}.key-card .key-label{display:block;color:var(--gold);font-size:.78rem;letter-spacing:.18em;font-weight:800;margin-bottom:.35rem}.key-card strong{font-family:"Cormorant Garamond",serif;font-size:2.15rem;color:var(--moon)}.key-card p{font-size:1.08rem;line-height:1.55;margin:.35rem 0 0;color:#d8e1ea}
+.split-grid--definition{grid-template-columns:1.08fr .92fr;gap:clamp(2rem,4vw,4.5rem)}
+.constellation-diagram{width:min(100%,460px)}
+.constellation-diagram text{font-size:16px}.constellation-diagram .core-label{font-size:20px}.constellation-diagram .core-label:last-child{font-size:25px}
+.scene--comparison::before{background:radial-gradient(circle at 50% 15%,rgba(36,88,166,.18),transparent 32%),linear-gradient(145deg,#07111f,#0b2443)}
+.comparison-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.35rem;margin-top:1.45rem}
+.comparison-card{border:1px solid rgba(245,235,212,.16);background:rgba(8,20,38,.62);border-radius:24px;padding:1.6rem 1.7rem;box-shadow:var(--shadow)}
+.comparison-card--gold{border-color:rgba(244,201,93,.45);background:linear-gradient(145deg,rgba(27,59,100,.78),rgba(8,20,38,.82))}
+.comparison-card h3{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,2.5vw,2.55rem);margin:.55rem 0 .6rem;color:#f7f0df}
+.comparison-card p,.example-line{font-size:clamp(1.02rem,1.16vw,1.16rem);line-height:1.58;color:#cbd6e2}
+.example-line{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(244,201,93,.2);color:#f2ead8}
+.big-takeaway{font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,2vw,2.15rem);line-height:1.35;margin:1.25rem 0 0;color:#efe9dc}.big-takeaway strong{color:var(--moon)}
+.policy-two{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.35rem}
+.policy-focus{position:relative;border:1px solid rgba(245,235,212,.15);background:rgba(9,24,45,.75);border-radius:24px;padding:1.6rem 1.65rem}
+.policy-focus h3{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,2.4vw,2.5rem);margin:.45rem 0 .6rem;color:#f7f0df}
+.policy-focus p{font-size:clamp(1.05rem,1.2vw,1.18rem);line-height:1.62;color:#cdd8e4;margin:0}
+.policy-focus a{display:inline-block;margin-top:.9rem;font-size:1rem;text-decoration:none}
+.policy-badge{display:inline-flex;padding:.3rem .55rem;border-radius:999px;background:rgba(244,201,93,.12);border:1px solid rgba(244,201,93,.32);color:var(--gold);font-weight:800;letter-spacing:.12em;font-size:.76rem}
+.policy-caveat{margin-top:1.1rem;font-size:clamp(1rem,1.15vw,1.13rem);line-height:1.55;padding:1rem 1.15rem}
+.scene--jhs::before{background:radial-gradient(circle at 50% 30%,rgba(244,201,93,.10),transparent 28%),linear-gradient(180deg,#06101d,#0d2a4b)}
+.jhs-inner{max-width:980px}.memorandum-card{margin:1.2rem auto 0;max-width:850px;border:1px solid rgba(244,201,93,.4);background:linear-gradient(145deg,rgba(22,54,94,.84),rgba(8,20,38,.9));border-radius:28px;padding:1.6rem 2rem 1.7rem;box-shadow:var(--shadow)}
+.memorandum-date{font-size:.8rem;letter-spacing:.16em;color:var(--gold);font-weight:800}.memorandum-card h3{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,3vw,3.1rem);margin:.35rem 0 .6rem}.memorandum-title{font-size:clamp(1.2rem,1.55vw,1.5rem);line-height:1.5;color:#f0e9da;margin:.25rem auto 1rem;max-width:760px}.ks-badge{display:inline-block;padding:.7rem 1rem;border-radius:14px;background:rgba(244,201,93,.1);border:1px solid rgba(244,201,93,.28);color:var(--moon);font-size:clamp(1rem,1.3vw,1.2rem);font-weight:800;letter-spacing:.08em}.memorandum-card a{display:block;margin-top:1rem;font-size:1rem;text-decoration:none}.jhs-takeaway{font-size:clamp(1.15rem,1.45vw,1.36rem);line-height:1.6;max-width:820px;margin:1.15rem auto 0;color:#d6e0e9}.jhs-takeaway strong{color:var(--moon)}
+.pathway--large{margin:1.7rem 0 1rem}.path-step{min-height:150px;padding:1.15rem}.path-step strong{font-size:2rem}.path-step small{font-size:1rem;line-height:1.45}.path-step--gold{border-color:rgba(244,201,93,.45);background:linear-gradient(145deg,rgba(244,201,93,.12),rgba(8,20,38,.65))}
+.scene--benefit-only::before{background:radial-gradient(circle at 15% 20%,rgba(50,106,115,.22),transparent 34%),linear-gradient(145deg,#06111e,#102b4c)}
+.benefit-grid--large{gap:1.25rem;margin-top:1.4rem}.benefit-grid--large .benefit-card{border:1px solid rgba(244,201,93,.18);border-radius:22px;padding:1.55rem;background:rgba(8,20,38,.45)}.benefit-grid--large .benefit-card span{font-size:.9rem;font-weight:800;letter-spacing:.08em}.benefit-grid--large .benefit-card h3{font-size:clamp(2rem,2.5vw,2.55rem);margin:.55rem 0}.benefit-grid--large .benefit-card p{font-size:clamp(1.05rem,1.18vw,1.17rem);line-height:1.62;color:#cbd7e3}
+.strategy-feature{max-width:1050px}.strategy-giant-no{display:block;font-family:"Cormorant Garamond",serif;font-size:clamp(4rem,7vw,7rem);line-height:.7;color:rgba(244,201,93,.7);font-style:italic;margin-bottom:.35rem}.strategy-feature-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.3rem;align-items:stretch;margin-top:1.2rem}.strategy-feature-copy,.teacher-script{border:1px solid rgba(245,235,212,.15);background:rgba(8,20,38,.66);border-radius:24px;padding:1.5rem}.strategy-feature-copy p{font-size:clamp(1.08rem,1.25vw,1.22rem);line-height:1.6;margin:.1rem 0 .8rem}.strategy-feature-copy strong{color:var(--moon)}.teacher-script{font-family:"Cormorant Garamond",serif;font-size:clamp(1.65rem,2.1vw,2.15rem);line-height:1.42;color:#f5ecd8;margin:0;border-color:rgba(244,201,93,.35);display:flex;align-items:center}
+.scene--strategies-alt::before{background:linear-gradient(150deg,#071421,#0c2b4d)}.strategy-duo{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.3rem}.strategy-duo-card{border:1px solid rgba(245,235,212,.15);background:rgba(8,20,38,.62);border-radius:24px;padding:1.55rem}.strategy-duo-no{font-family:"Cormorant Garamond",serif;font-size:3.1rem;line-height:1;color:var(--gold);font-style:italic}.strategy-duo-card h3{font-family:"Cormorant Garamond",serif;font-size:clamp(1.85rem,2.25vw,2.35rem);margin:.3rem 0 .55rem}.strategy-duo-card p{font-size:clamp(1.02rem,1.16vw,1.15rem);line-height:1.6;color:#cbd6e1}.takeaway-band{margin-top:1.15rem}.takeaway-band strong{font-size:clamp(1.4rem,1.7vw,1.7rem);line-height:1.4}
+.student-quote p{font-size:1.05rem}.student-quote blockquote{font-size:clamp(1.6rem,2.1vw,2.05rem);line-height:1.4}.scenario-options button{font-size:clamp(1rem,1.1vw,1.08rem);padding:1rem 1.1rem}.feedback-card{font-size:1.05rem;line-height:1.58}.moon-timer button{font-size:1rem}
+.art-credit{font-size:.7rem;line-height:1.35}
+
+@media (max-width:900px){
+  .split-grid--definition,.comparison-grid,.policy-two,.strategy-feature-grid,.strategy-duo{grid-template-columns:1fr}
+  .constellation-diagram{width:min(68vw,360px)}
+  .policy-focus,.comparison-card,.strategy-duo-card{padding:1.35rem}
+  .pathway--large{grid-template-columns:1fr;max-width:620px;margin-left:auto;margin-right:auto}
+  .benefit-grid--large{grid-template-columns:1fr}
+  .strategy-feature{max-width:760px}
+  .scene-controls{position:static;transform:none;text-align:center;margin-top:1rem}
+}
+@media (max-width:620px){
+  .scene{padding:72px 20px 56px;align-items:flex-start}
+  .scene__inner{margin:0 auto}
+  .display{font-size:clamp(2.65rem,13vw,4rem);line-height:.98}
+  .display--soft{font-size:clamp(2.1rem,10.5vw,3.35rem)}
+  .quiet,.lead,.speaker-line,.policy-focus p,.benefit-grid--large .benefit-card p,.strategy-feature-copy p,.strategy-duo-card p,.comparison-card p,.example-line{font-size:1.03rem}
+  .definition{font-size:1.55rem}
+  .constellation-diagram{width:min(84vw,330px)}
+  .comparison-card h3,.policy-focus h3,.benefit-grid--large .benefit-card h3,.strategy-duo-card h3{font-size:1.9rem}
+  .memorandum-card{padding:1.3rem 1.15rem}.memorandum-title{font-size:1.08rem}.jhs-takeaway{font-size:1.06rem}
+  .path-step{min-height:auto;padding:1rem 1.1rem}.path-step strong{font-size:1.7rem}.path-step small{font-size:.98rem}
+  .teacher-script{font-size:1.55rem}.strategy-giant-no{font-size:4.5rem}
+  .feedback-card{font-size:1rem}.art-credit{font-size:.58rem}
+}
+@media (orientation:landscape) and (max-height:700px){
+  .scene{padding-top:66px;padding-bottom:34px;align-items:flex-start}.scene__inner{margin:0 auto}
+  .display{font-size:clamp(2.45rem,7.5vh,4rem)}.display--soft{font-size:clamp(2rem,6.4vh,3.2rem)}
+  .section-kicker{font-size:.74rem;margin-bottom:.55rem}.quiet,.lead,.speaker-line{font-size:1rem}
+  .comparison-card,.policy-focus,.strategy-duo-card,.strategy-feature-copy,.teacher-script{padding:1rem 1.15rem}
+  .comparison-card p,.policy-focus p,.strategy-duo-card p,.strategy-feature-copy p,.example-line{font-size:.94rem;line-height:1.45}
+  .comparison-card h3,.policy-focus h3,.strategy-duo-card h3{font-size:1.7rem}
+  .memorandum-card{padding:1rem 1.2rem}.memorandum-card h3{font-size:2rem}.memorandum-title{font-size:1rem;line-height:1.35}.jhs-takeaway{font-size:.98rem;line-height:1.4}
+  .path-step{min-height:112px;padding:.75rem}.path-step strong{font-size:1.55rem}.path-step small{font-size:.86rem}
+  .benefit-grid--large .benefit-card{padding:1rem}.benefit-grid--large .benefit-card h3{font-size:1.7rem}.benefit-grid--large .benefit-card p{font-size:.93rem;line-height:1.45}
+  .strategy-giant-no{font-size:4.2rem}.teacher-script{font-size:1.35rem}.takeaway-band{margin-top:.7rem;padding-top:.7rem}.takeaway-band strong{font-size:1.2rem}
+  .student-quote{padding:.4rem 0}.student-quote blockquote{font-size:1.35rem;margin:.2rem 0 .55rem}.scenario-options button{font-size:.92rem;padding:.65rem .8rem}.moon{width:88px;height:88px}.feedback-card{font-size:.9rem;line-height:1.4;padding:1rem}
+  .reveal-controls{margin-top:.7rem}.art-credit{display:none}
+}
+
+
+/* ===== PRESENTER VIEW ===== */
+.presenter-panel{display:none}
+.presenter-launch{height:38px;border:1px solid rgba(244,201,93,.28);background:rgba(244,201,93,.08);color:var(--moon);border-radius:999px;padding:0 .85rem;cursor:pointer;font-size:.72rem;font-weight:800;letter-spacing:.05em;transition:.2s ease}.presenter-launch:hover{background:rgba(244,201,93,.14);border-color:rgba(244,201,93,.5)}
+.presenter-mode{background:#030914;overflow:hidden}
+.presenter-mode .topbar,.presenter-mode .advance-hint,.presenter-mode .mobile-menu{display:none!important}
+.presenter-mode .deck{position:fixed;left:0;top:0;width:58vw;height:100dvh;border-right:1px solid rgba(244,201,93,.18);background:#050d19;scroll-snap-type:y mandatory}
+.presenter-mode .scene{padding-left:clamp(18px,2.2vw,34px);padding-right:clamp(18px,2.2vw,34px)}
+.presenter-mode .scene__inner{max-width:100%}
+.presenter-mode .display{font-size:clamp(2.3rem,4.2vw,4.5rem)}
+.presenter-mode .hero__title{font-size:clamp(3rem,5.7vw,6rem)}
+.presenter-mode .hero{margin-left:0}
+.presenter-mode .constellation-diagram{width:min(78%,390px)}
+.presenter-mode .presenter-panel{display:flex;position:fixed;z-index:200;right:0;top:0;width:42vw;height:100dvh;flex-direction:column;background:linear-gradient(180deg,#07111f,#0b1830 72%,#07111f);color:var(--cream);box-shadow:-20px 0 60px rgba(0,0,0,.35)}
+.presenter-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1.25rem 1.4rem 1rem;border-bottom:1px solid rgba(245,235,212,.1);background:rgba(8,20,38,.8);backdrop-filter:blur(12px)}
+.presenter-eyebrow{margin:0 0 .28rem;color:var(--gold);font-size:.67rem;font-weight:800;letter-spacing:.22em}
+.presenter-head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(1.85rem,2.25vw,2.55rem);line-height:1;margin:0 0 .3rem}
+.presenter-meta{margin:0;color:var(--muted);font-size:.78rem;letter-spacing:.04em}
+.presenter-close{flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:1px solid rgba(245,235,212,.15);background:rgba(245,235,212,.05);cursor:pointer;color:var(--cream)}
+.presenter-core{padding:1rem 1.4rem .9rem;border-bottom:1px solid rgba(245,235,212,.08);background:rgba(244,201,93,.05)}
+.presenter-core span{display:block;font-size:.66rem;letter-spacing:.18em;color:var(--gold);font-weight:800;margin-bottom:.3rem}
+.presenter-core strong{font-family:"Cormorant Garamond",serif;font-size:1.42rem;line-height:1.2;font-weight:600}
+.presenter-controls{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;padding:.8rem 1.4rem;border-bottom:1px solid rgba(245,235,212,.08)}
+.presenter-controls button{border:1px solid rgba(245,235,212,.14);background:rgba(8,20,38,.7);color:var(--cream);border-radius:12px;padding:.7rem .45rem;font-size:.78rem;font-weight:700;cursor:pointer}
+.presenter-controls button:hover{border-color:rgba(244,201,93,.5);background:rgba(244,201,93,.09)}
+.presenter-controls button.presenter-primary{background:linear-gradient(135deg,var(--gold),var(--moon));color:#102039;border-color:transparent}
+.presenter-scroll{flex:1;overflow-y:auto;padding:1rem 1.4rem 1.5rem;scrollbar-width:thin;scrollbar-color:rgba(244,201,93,.34) transparent}
+.presenter-section{padding:.9rem 0;border-bottom:1px solid rgba(245,235,212,.08)}
+.presenter-section:last-child{border-bottom:0}
+.presenter-section h3{display:flex;align-items:center;gap:.5rem;margin:0 0 .6rem;font-size:.73rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.presenter-section ul{margin:0;padding-left:1.1rem;color:#dce5ef}
+.presenter-section li{margin:.45rem 0;line-height:1.5;font-size:.94rem}
+.presenter-section li::marker{color:var(--gold)}
+.presenter-transition{padding:.8rem 1rem;border:1px solid rgba(244,201,93,.2);background:rgba(244,201,93,.06);border-radius:14px;line-height:1.5;font-size:.92rem;color:#f4ecd9}
+.presenter-qa{display:grid;gap:.72rem}
+.qa-card{border:1px solid rgba(159,175,196,.16);background:rgba(8,20,38,.48);border-radius:14px;padding:.8rem .9rem}
+.qa-card strong{display:block;color:#f4ecd9;margin-bottom:.28rem;font-size:.92rem;line-height:1.35}
+.qa-card p{margin:0;color:#bfcddd;font-size:.87rem;line-height:1.48}
+.presenter-foot{padding:.9rem 1.4rem 1rem;border-top:1px solid rgba(245,235,212,.1);background:rgba(8,20,38,.82);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.presenter-next{font-size:.78rem;color:var(--muted)}
+.presenter-next strong{display:block;color:var(--cream);font-size:.98rem;margin-top:.16rem}
+.presenter-foot button{white-space:nowrap}
+.presenter-policy-note{margin-top:.65rem;padding:.7rem .8rem;border-left:3px solid var(--gold);background:rgba(244,201,93,.06);font-size:.82rem;line-height:1.45;color:#cbd7e3}
+.presenter-mode .reveal-controls,.presenter-mode .scene-controls{display:none!important}
+.presenter-mode .art-credit{font-size:.52rem;max-width:55%}
+@media (max-width:1050px){
+  .presenter-launch{padding:0 .65rem;font-size:.68rem}
+  .presenter-mode .deck{width:52vw}.presenter-mode .presenter-panel{width:48vw}
+  .presenter-mode .display{font-size:clamp(2.1rem,4.5vw,3.7rem)}
+  .presenter-controls{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .presenter-mode .deck{display:none}.presenter-mode .presenter-panel{width:100vw}
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to presentation</a>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__stars" id="stars"></div>
+    <div class="ambient__swirl ambient__swirl--one"></div>
+    <div class="ambient__swirl ambient__swirl--two"></div>
+  </div>
+
+  <header class="topbar" id="topbar">
+    <button class="brand" data-go="0" aria-label="Go to opening">
+      <span class="brand__star">✦</span>
+      <span>TRANSLANGUAGING</span>
+    </button>
+
+    <nav class="constellation" aria-label="Session progress">
+      <button class="constellation__node is-active" data-go="0" aria-label="Opening"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="1" aria-label="Classroom question"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="2" aria-label="Definition"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="3" aria-label="Comparison"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="4" aria-label="Policy shift"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="5" aria-label="Junior High link"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="6" aria-label="Learning pathway"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="7" aria-label="Benefits"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="8" aria-label="Strategy one"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="9" aria-label="Strategies two and three"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="10" aria-label="Scenario"><span>✦</span></button>
+      <i></i><button class="constellation__node" data-go="11" aria-label="Reflection"><span>✦</span></button>
+    </nav>
+
+    <div class="topbar__actions">
+      <span class="session-clock" id="sessionClock" aria-label="Session timer">15:00</span>
+      <button class="presenter-launch" id="presenterBtn" aria-label="Open presenter view" title="Open Presenter View"><span>Presenter</span></button>
+      <button class="icon-btn" id="fullscreenBtn" aria-label="Enter fullscreen" title="Presentation mode">⛶</button>
+      <button class="icon-btn mobile-only" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Section menu">
+    <button data-go="0">Opening</button>
+    <button data-go="1">The Question</button>
+    <button data-go="2">Definition</button>
+    <button data-go="3">Translanguaging vs Code-Switching</button>
+    <button data-go="4">Recent Policy Shift</button>
+    <button data-go="5">Why It Matters for JHS</button>
+    <button data-go="6">The Learning Pathway</button>
+    <button data-go="7">Three Benefits</button>
+    <button data-go="8">Strategy 1</button>
+    <button data-go="9">Strategies 2 & 3</button>
+    <button data-go="10">Teacher Scenario</button>
+    <button data-go="11">Reflection</button>
+  </aside>
+
+
+  <aside class="presenter-panel" id="presenterPanel" aria-label="Presenter view">
+    <div class="presenter-head">
+      <div>
+        <p class="presenter-eyebrow">PRESENTER VIEW · PRIVATE NOTES</p>
+        <h2 id="presenterSlideTitle">Opening</h2>
+        <p class="presenter-meta" id="presenterMeta">Slide 1 of 12</p>
+      </div>
+      <button class="presenter-close" id="presenterClose" aria-label="Close presenter view" title="Close presenter view">×</button>
+    </div>
+    <div class="presenter-core">
+      <span>CORE MESSAGE</span>
+      <strong id="presenterCore">Use learners’ linguistic resources strategically to move toward the learning goal.</strong>
+    </div>
+    <div class="presenter-controls" aria-label="Presenter controls">
+      <button id="presenterPrev">← Previous</button>
+      <button class="presenter-primary" id="presenterReveal">Reveal / Advance</button>
+      <button id="presenterNext">Next slide →</button>
+      <button id="presenterReset">Reset reveals</button>
+    </div>
+    <div class="presenter-scroll">
+      <section class="presenter-section">
+        <h3>✦ How to explain it</h3>
+        <ul id="presenterExplain"></ul>
+      </section>
+      <section class="presenter-section">
+        <h3>✦ Connect it</h3>
+        <div class="presenter-transition" id="presenterConnect"></div>
+      </section>
+      <section class="presenter-section">
+        <h3>✦ Ask the room</h3>
+        <ul id="presenterAsk"></ul>
+      </section>
+      <section class="presenter-section">
+        <h3>✦ Questions you may encounter</h3>
+        <div class="presenter-qa" id="presenterQA"></div>
+      </section>
+      <section class="presenter-section" id="presenterCautionWrap">
+        <h3>✦ Presenter caution</h3>
+        <div class="presenter-policy-note" id="presenterCaution"></div>
+      </section>
+    </div>
+    <div class="presenter-foot">
+      <div class="presenter-next">NEXT SCREEN<strong id="presenterNextTitle">The Question</strong></div>
+      <button class="secondary-btn" id="openAudienceBtn">Open audience view</button>
+    </div>
+  </aside>
+
+  <main id="main" class="deck" tabindex="-1">
+    <!-- 00 OPENING -->
+    <section class="scene scene--hero is-current" data-scene="0" data-title="Opening">
+      <div class="art-bg art-bg--starry" role="img" aria-label="Vincent van Gogh's The Starry Night, used as an atmospheric background"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="scene__inner hero">
+        <p class="eyebrow reveal is-visible">LEARNING ACTION CELL · ENGLISH DEPARTMENT</p>
+        <h1 class="hero__title reveal is-visible"><span>One classroom.</span><span>Many languages.</span><em>One learning goal.</em></h1>
+        <p class="hero__subtitle reveal is-visible">Translanguaging as a bridge to meaning, participation, and academic English</p>
+        <div class="hero__meta reveal is-visible"><span class="pill">15-minute professional learning session</span><span class="pill">Key Stage 3 · English</span></div>
+        <button class="primary-btn reveal is-visible" data-next-scene>Begin the journey <span>↓</span></button>
+      </div>
+      <p class="art-credit">Atmosphere inspired by Vincent van Gogh, <em>The Starry Night</em> (1889), public-domain reproduction via Wikimedia Commons.</p>
+    </section>
+
+    <!-- 01 HOOK -->
+    <section class="scene scene--dark" data-scene="1" data-title="The Question">
+      <div class="scene__inner centered narrow">
+        <p class="section-kicker">01 / ORIENT · ~1.25 MIN</p>
+        <p class="quiet reveal is-visible">A familiar classroom moment.</p>
+        <h2 class="display reveal is-visible">A student understands the lesson.</h2>
+        <p class="display display--soft reveal">You ask for an explanation in English.</p>
+        <p class="silence reveal">Silence.</p>
+        <div class="glass-card reflection-card reveal"><p>Does the learner not understand the concept—</p><strong>or are we measuring the ability to express it in English?</strong></div>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal next idea <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 02 DEFINITION -->
+    <section class="scene scene--split" data-scene="2" data-title="Definition">
+      <div class="scene__inner split-grid split-grid--definition">
+        <div>
+          <p class="section-kicker">02 / DISCOVER · ~1.25 MIN</p>
+          <h2 class="display reveal is-visible">What is <span class="gold">translanguaging?</span></h2>
+          <div class="definition reveal"><p>The <strong>strategic use</strong> of a learner’s full linguistic repertoire to make meaning, clarify concepts, communicate, and learn.</p></div>
+          <div class="glass-card key-card reveal"><span class="key-label">KEY WORD</span><strong>Strategic.</strong><p>Not “anything goes.” Language is used intentionally to move learning forward.</p></div>
+        </div>
+        <div class="constellation-diagram reveal" aria-label="Language resources flowing toward meaning and learning">
+          <svg viewBox="0 0 520 520" role="img" aria-label="Constellation diagram showing language resources connecting to meaning and learning">
+            <defs><filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path class="const-line" d="M100 130 C170 180, 210 200, 260 260"/><path class="const-line" d="M420 120 C350 175, 310 210, 260 260"/><path class="const-line" d="M110 390 C170 340, 215 300, 260 260"/><path class="const-line" d="M410 390 C350 340, 305 300, 260 260"/>
+            <circle class="const-star" cx="100" cy="130" r="9"/><circle class="const-star" cx="420" cy="120" r="9"/><circle class="const-star" cx="110" cy="390" r="9"/><circle class="const-star" cx="410" cy="390" r="9"/><circle class="const-star const-star--core" cx="260" cy="260" r="18"/>
+            <text x="50" y="105">ENGLISH</text><text x="370" y="95">FILIPINO</text><text x="38" y="430">HOME LANGUAGE</text><text x="345" y="430">VISUALS · GESTURES</text><text class="core-label" x="260" y="245" text-anchor="middle">MEANING</text><text class="core-label" x="260" y="282" text-anchor="middle">LEARNING</text>
+          </svg>
+        </div>
+      </div>
+      <div class="reveal-controls scene-controls"><button class="secondary-btn" data-reveal-next>Reveal next idea <span>→</span></button></div>
+    </section>
+
+    <!-- 03 COMPARISON -->
+    <section class="scene scene--comparison" data-scene="3" data-title="Comparison">
+      <div class="scene__inner">
+        <p class="section-kicker">03 / DISTINGUISH · ~1.25 MIN</p>
+        <h2 class="display reveal is-visible">Translanguaging is <span class="gold">not simply</span> code-switching.</h2>
+        <div class="comparison-grid">
+          <article class="comparison-card reveal"><span class="compare-label">CODE-SWITCHING</span><h3>Language A ⇄ Language B</h3><p>Describes alternation between identifiable languages or language varieties.</p><div class="example-line">“I already submitted it, <em>pero hindi pa na-check.</em>”</div></article>
+          <article class="comparison-card comparison-card--gold reveal"><span class="compare-label">TRANSLANGUAGING</span><h3>Resources → Meaning → Learning</h3><p>Focuses on how learners draw across linguistic resources to accomplish a learning purpose.</p><div class="example-line">Read in English → discuss the idea → bridge key terms → produce the final English response.</div></article>
+        </div>
+        <p class="big-takeaway reveal">The difference is not only <em>which language</em> is used—it is <strong>what language is helping the learner accomplish.</strong></p>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal takeaway <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 04 POLICY SHIFT -->
+    <section class="scene scene--policy" data-scene="4" data-title="Recent Policy Shift">
+      <div class="scene__inner">
+        <p class="section-kicker">04 / CONNECT · ~1.25 MIN</p>
+        <h2 class="display reveal is-visible">A recent shift in the <span class="gold">language-policy landscape.</span></h2>
+        <div class="policy-two">
+          <article class="policy-focus reveal"><span class="policy-badge">2024</span><h3>Republic Act No. 12027</h3><p>Ends the mandatory use of mother tongue as the medium of instruction in K–3. Filipino and English are the primary media of instruction, while regional languages may still serve as auxiliary media.</p><a href="https://lawphil.net/statutes/repacts/ra2024/ra_12027_2024.html" target="_blank" rel="noopener">View law ↗</a></article>
+          <article class="policy-focus reveal"><span class="policy-badge">2025</span><h3>DepEd Order No. 020, s. 2025</h3><p>For K–3, DepEd identifies <strong>translanguaging, scaffolding, and bridging</strong> among the linguistic supports schools may use.</p><a href="https://www.deped.gov.ph/wp-content/uploads/DO_s2025_020r_8.pdf" target="_blank" rel="noopener">View order ↗</a></article>
+        </div>
+        <div class="policy-caveat reveal"><strong>Scope check:</strong> DepEd Order 020 is specifically a <strong>K–3 medium-of-instruction policy.</strong></div>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal policy connection <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 05 JHS LINK -->
+    <section class="scene scene--jhs" data-scene="5" data-title="Why It Matters for JHS">
+      <div class="scene__inner centered jhs-inner">
+        <p class="section-kicker">05 / CONNECT · ~1 MIN</p>
+        <h2 class="display reveal is-visible">So why does this matter for <span class="gold">Grade 9?</span></h2>
+        <div class="memorandum-card reveal">
+          <span class="memorandum-date">SEPTEMBER 12, 2025</span>
+          <h3>DM-OULS-2025-078</h3>
+          <p class="memorandum-title">“Language Bridging in Action: Using Pedagogical Translanguaging to Support English Teaching for Key Stages 1–3”</p>
+          <div class="ks-badge">KEY STAGE 3 = GRADES 7–10</div>
+          <a href="https://caraga.deped.gov.ph/wp-content/uploads/2025/10/d_59161.pdf" target="_blank" rel="noopener">View memorandum ↗</a>
+        </div>
+        <p class="jhs-takeaway reveal">For Junior High School, this 2025 DepEd/NEAP training memorandum is the <strong>direct connection</strong> to pedagogical translanguaging in English teaching.</p>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal relevance <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 06 PATHWAY -->
+    <section class="scene scene--benefits" data-scene="6" data-title="The Learning Pathway">
+      <div class="scene__inner">
+        <p class="section-kicker">06 / ILLUMINATE · ~1.5 MIN</p>
+        <h2 class="display reveal is-visible">The destination can stay the same.<br><span class="gold">The pathway can change.</span></h2>
+        <p class="lead reveal">Target: <strong>Explain an argumentative claim in academic English.</strong></p>
+        <div class="pathway pathway--large reveal" aria-label="A translanguaging learning pathway">
+          <div class="path-step"><span>01</span><strong>THINK</strong><small>Process the idea.</small></div><div class="path-line"></div>
+          <div class="path-step"><span>02</span><strong>DISCUSS</strong><small>Test the meaning.</small></div><div class="path-line"></div>
+          <div class="path-step"><span>03</span><strong>BRIDGE</strong><small>Find academic English.</small></div><div class="path-line"></div>
+          <div class="path-step path-step--gold"><span>04</span><strong>PRODUCE</strong><small>Deliver the required English output.</small></div>
+        </div>
+        <p class="big-takeaway reveal">Translanguaging can change the <strong>route</strong> without changing the <strong>learning target.</strong></p>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal the principle <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 07 BENEFITS -->
+    <section class="scene scene--benefit-only" data-scene="7" data-title="Three Benefits">
+      <div class="scene__inner">
+        <p class="section-kicker">07 / WHY IT HELPS · ~1.5 MIN</p>
+        <h2 class="display reveal is-visible">Three reasons it can help <span class="gold">learning.</span></h2>
+        <div class="benefit-grid benefit-grid--large">
+          <article class="benefit-card reveal"><span>✦ 01</span><h3>Comprehension</h3><p>Unlock difficult concepts before limited target-language proficiency becomes a barrier.</p></article>
+          <article class="benefit-card reveal"><span>✦ 02</span><h3>Participation</h3><p>Let learners contribute ideas before they can express those ideas in polished academic English.</p></article>
+          <article class="benefit-card reveal"><span>✦ 03</span><h3>Bridging</h3><p>Move from familiar language toward disciplinary vocabulary and the required academic output.</p></article>
+        </div>
+        <p class="big-takeaway reveal">The goal is not “more languages.” The goal is <strong>better learning through language.</strong></p>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal takeaway <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 08 STRATEGY ONE -->
+    <section class="scene scene--strategies" data-scene="8" data-title="Strategy 1">
+      <div class="art-strip" aria-hidden="true"></div>
+      <div class="scene__inner strategy-feature">
+        <p class="section-kicker">08 / APPLY · ~1.25 MIN</p>
+        <span class="strategy-giant-no reveal is-visible">01</span>
+        <h2 class="display reveal is-visible">Think → Bridge → <span class="gold">Share</span></h2>
+        <div class="strategy-feature-grid">
+          <div class="strategy-feature-copy reveal"><p><strong>Think:</strong> Process the idea using the language that helps you understand it.</p><p><strong>Bridge:</strong> Identify the English words and structures needed.</p><p><strong>Share:</strong> Express the response in the target language.</p></div>
+          <blockquote class="teacher-script reveal">“Ano ang point mo? Now, how can we express that idea academically in English?”</blockquote>
+        </div>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal teacher move <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 09 STRATEGIES TWO & THREE -->
+    <section class="scene scene--strategies-alt" data-scene="9" data-title="Strategies 2 & 3">
+      <div class="scene__inner">
+        <p class="section-kicker">09 / APPLY · ~1.5 MIN</p>
+        <h2 class="display reveal is-visible">Two more classroom-ready <span class="gold">moves.</span></h2>
+        <div class="strategy-duo">
+          <article class="strategy-duo-card reveal"><span class="strategy-duo-no">02</span><h3>Discuss → Refine → Produce</h3><p>Allow multilingual discussion of a difficult concept. Then help learners refine vocabulary and structure for the required output.</p><div class="example-line">The discussion may be multilingual; the assessed paragraph can still be in English.</div></article>
+          <article class="strategy-duo-card reveal"><span class="strategy-duo-no">03</span><h3>Multilingual Annotation</h3><p>Allow notes in English, Filipino, a home language, symbols, or diagrams—while keeping key academic terms visible.</p><div class="example-line"><strong>counterclaim</strong> → salungat na argumento / kabilang panig</div></article>
+        </div>
+        <div class="takeaway-band reveal"><span>THE PRINCIPLE</span><strong>Use language intentionally to move learners toward the learning objective.</strong></div>
+        <div class="reveal-controls"><button class="secondary-btn" data-reveal-next>Reveal principle <span>→</span></button></div>
+      </div>
+    </section>
+
+    <!-- 10 SCENARIO -->
+    <section class="scene scene--scenario" data-scene="10" data-title="Scenario">
+      <div class="scene__inner scenario-layout">
+        <div>
+          <p class="section-kicker">10 / QUESTION · ~2 MIN</p>
+          <h2 class="display reveal is-visible">What would <span class="gold">you</span> do?</h2>
+          <div class="student-quote reveal is-visible"><p>You ask a Grade 9 learner:</p><blockquote>“Why is the author’s evidence insufficient?”</blockquote><p>The learner replies:</p><blockquote>“Sir/Ma’am, alam ko po pero hindi ko ma-explain in English.”</blockquote></div>
+          <div class="scenario-options reveal is-visible" role="group" aria-label="Choose a response">
+            <button data-choice="A"><span>A</span>“English only. Try again.”</button>
+            <button data-choice="B"><span>B</span>“Explain the idea first using the language that helps you think. Then we’ll express it in English.”</button>
+            <button data-choice="C"><span>C</span>Teacher translates the entire answer for the learner.</button>
+          </div>
+        </div>
+        <div class="scenario-feedback" id="scenarioFeedback" aria-live="polite"><div class="moon-timer"><div class="moon" id="moon">2:00</div><button id="timerBtn">Start 2-minute discussion</button></div><div class="feedback-card" id="feedbackCard"><span class="tiny-star">✦</span><p>Select an option, discuss briefly, then reveal the rationale.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 11 REFLECTION -->
+    <section class="scene scene--closing" data-scene="11" data-title="Reflection">
+      <div class="art-bg art-bg--rhone" role="img" aria-label="Vincent van Gogh's Starry Night Over the Rhône as an atmospheric closing background"></div><div class="closing-overlay" aria-hidden="true"></div>
+      <div class="scene__inner centered narrow closing-content">
+        <p class="section-kicker reveal is-visible">11 / REFLECT · ~1 MIN</p>
+        <h2 class="closing-line reveal is-visible">Language should be a bridge, <em>not a barrier.</em></h2>
+        <p class="reflection-question reveal">At this moment, is my language requirement helping me measure learning—or preventing the learner from showing it?</p>
+        <div class="closing-mantra reveal"><span>STRATEGIC.</span><span>SCAFFOLDED.</span><span>GOAL-ORIENTED.</span></div>
+        <div class="final-words reveal"><p>One classroom.</p><p>Many possibilities.</p><strong>What will you illuminate next?</strong></div>
+        <div class="closing-actions reveal"><button class="primary-btn" data-go="0">↺ Revisit the session</button><button class="secondary-btn" id="resourcesBtn">✦ View sources</button></div>
+      </div>
+      <p class="art-credit">Vincent van Gogh, <em>Starry Night Over the Rhône</em> (1888), public-domain reproduction via Wikimedia Commons.</p>
+    </section>
+  </main>
+
+  <button class="advance-hint" id="advanceHint" aria-label="Advance presentation">SPACE / →</button>
+
+  <dialog class="sources-dialog" id="sourcesDialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Close sources">×</button>
+      <p class="section-kicker">SOURCE NOTES</p>
+      <h2>Policy & visual sources</h2>
+      <div class="source-list">
+        <a href="https://lawphil.net/statutes/repacts/ra2024/ra_12027_2024.html" target="_blank" rel="noopener"><strong>Republic Act No. 12027 (2024)</strong><span>Mother tongue MOI amendment for K–3.</span></a>
+        <a href="https://www.deped.gov.ph/wp-content/uploads/DO_s2025_020r_8.pdf" target="_blank" rel="noopener"><strong>DepEd Order No. 020, s. 2025</strong><span>Updated K–3 MOI policy; defines translanguaging and linguistic supports.</span></a>
+        <a href="https://caraga.deped.gov.ph/wp-content/uploads/2025/10/d_59161.pdf" target="_blank" rel="noopener"><strong>DM-OULS-2025-078 (Sept. 12, 2025)</strong><span>NEAP training on pedagogical translanguaging for English teaching, Key Stages 1–3.</span></a>
+        <a href="https://www.deped.gov.ph/wp-content/uploads/FAQs-ON-THE-MATATAG-CURRICULUM.pdf" target="_blank" rel="noopener"><strong>DepEd MATATAG Curriculum FAQ</strong><span>Identifies Key Stage 3 as Grades 7–10.</span></a>
+        <a href="https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" target="_blank" rel="noopener"><strong>The Starry Night — Wikimedia Commons</strong><span>Public-domain reproduction.</span></a>
+        <a href="https://commons.wikimedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg" target="_blank" rel="noopener"><strong>Starry Night Over the Rhône — Wikimedia Commons</strong><span>Public-domain reproduction.</span></a>
+      </div>
+      <p class="source-note">This presentation uses the policy issuances as context, not as a claim that every translanguaging practice shown is mandated for every grade level.</p>
+    </form>
+  </dialog>
+
+  <script>
+(() => {
+  const deck = document.querySelector('.deck');
+  const scenes = [...document.querySelectorAll('.scene')];
+  const nodes = [...document.querySelectorAll('.constellation__node')];
+  const lines = [...document.querySelectorAll('.constellation i')];
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const clock = document.getElementById('sessionClock');
+  let current = 0;
+  let sessionSeconds = 15 * 60;
+  let sessionTimerStarted = false;
+
+
+  const query = new URLSearchParams(location.search);
+  const presenterMode = query.get('presenter') === '1';
+  const syncView = query.get('sync') === '1';
+  const syncChannel = 'BroadcastChannel' in window ? new BroadcastChannel('translanguaging-presenter-sync-v3') : null;
+  const syncOrigin = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  const initialRevealState = new Map();
+  scenes.forEach((scene, sceneIndex) => {
+    initialRevealState.set(sceneIndex, [...scene.querySelectorAll('.reveal')].map(el => el.classList.contains('is-visible')));
+  });
+
+  const presenterNotes = [
+    {
+      time:'~30 sec',
+      core:'Translanguaging is about one learning goal with more than one linguistic resource available to reach it.',
+      explain:[
+        'Welcome the group and frame this as a very short practical discussion—not a lecture on linguistics.',
+        'Point to “one classroom, many languages, one learning goal.” Stress that the learning goal remains central.',
+        'Tell them: “In 15 minutes, we will define it, connect it to current DepEd direction, and leave with three usable classroom moves.”'
+      ],
+      connect:'“Let us begin with a situation we already know very well in English classes.”',
+      ask:['No need to ask a long opening question. Move quickly into the classroom dilemma.'],
+      qa:[
+        ['Are you saying English is less important?','No. The session keeps academic English as a possible target output. Translanguaging is about the route learners use to build meaning and reach that target.']
+      ],
+      caution:'Avoid presenting translanguaging as “free use of any language at any time.” The whole session depends on purposeful, goal-oriented use.'
+    },
+    {
+      time:'~1.25 min',
+      core:'A learner can understand an idea before being able to express it fluently in English.',
+      explain:[
+        'Reveal the lines slowly. Let “Silence.” sit for a moment before speaking.',
+        'Separate two things: conceptual understanding and the ability to express that understanding in English.',
+        'Say: “Sometimes they overlap. Sometimes they do not. Our job is to know which one we are assessing at that moment.”'
+      ],
+      connect:'“That distinction is exactly where translanguaging becomes useful—as a bridge between meaning and the required language.”',
+      ask:['“Have you ever heard a learner say: ‘Alam ko po, pero hindi ko ma-explain in English’?”','Optional quick show of hands only—do not let this become a long sharing session.'],
+      qa:[
+        ['But isn’t explaining in English part of learning English?','Yes, when English production is part of the objective. The point is to distinguish the language objective from the content or thinking objective, then scaffold accordingly.'],
+        ['Are we lowering expectations?','Not necessarily. You can keep the same final expectation while giving learners a bridge to reach it.']
+      ],
+      caution:'Do not imply that conceptual understanding and English proficiency are unrelated. They can interact; the instructional decision depends on the objective.'
+    },
+    {
+      time:'~1.25 min',
+      core:'Translanguaging is the strategic use of a learner’s full linguistic repertoire for meaning-making and learning.',
+      explain:[
+        'Emphasize the word “strategic.” That is the safeguard against the idea that translanguaging means “anything goes.”',
+        'Walk through the constellation: English, Filipino, home language, visuals, gestures—all can support meaning-making.',
+        'Use a simple line: “The learner is not switching off one language before turning on another; they can draw from the resources they have.”'
+      ],
+      connect:'“Because this sounds similar to code-switching, let us separate the two ideas before we go further.”',
+      ask:['“What word in the definition matters most for classroom practice?” Lead them to “strategic.”'],
+      qa:[
+        ['Does translanguaging only mean using two languages?','No. The concept is broader than two named languages and can include other semiotic resources such as gestures, visuals, and mixed-language meaning-making.'],
+        ['Is Taglish automatically translanguaging?','Taglish can be part of translanguaging, but classroom translanguaging is better understood by its function: how the mixed resources help learners understand, think, communicate, or produce the target output.']
+      ],
+      caution:'Keep the definition practical. Avoid turning this into a technical debate about linguistic theory in a 15-minute session.'
+    },
+    {
+      time:'~1.25 min',
+      core:'Code-switching describes alternation; translanguaging focuses on how the whole repertoire is used to accomplish meaning and learning.',
+      explain:[
+        'Use the left card as a descriptive language example: moving between recognizable languages.',
+        'Use the right card as the pedagogical process: read in English → discuss → bridge key terms → produce in English.',
+        'Stress that the concepts can overlap. The point is not to police labels; it is to understand the broader pedagogical function.'
+      ],
+      connect:'“Now that the concept is clear, the next question is: why is this especially timely in the Philippine policy context?”',
+      ask:['“Which example looks more like something we deliberately design as teachers?”'],
+      qa:[
+        ['So is code-switching wrong?','No. Code-switching is not being presented as wrong. It is simply a narrower description of language alternation, while translanguaging highlights the learner’s broader meaning-making repertoire.'],
+        ['Can code-switching happen inside translanguaging?','Yes. A code-switching moment can be one feature within a broader translanguaging process.']
+      ],
+      caution:'Do not claim there is a universally agreed hard boundary between the two terms. Present the distinction as a useful classroom framing.'
+    },
+    {
+      time:'~1.25 min',
+      core:'Recent policy changed the K–3 medium-of-instruction landscape, while still recognizing multilingual supports.',
+      explain:[
+        'RA 12027 discontinued the mandatory use of mother tongue as medium of instruction from Kindergarten to Grade 3.',
+        'The law states that Filipino and English are the media of instruction, while regional languages may serve as auxiliary media.',
+        'Then point to DepEd Order No. 020, s. 2025: within its K–3 scope, it identifies translanguaging, scaffolding, and bridging as linguistic supports.',
+        'Immediately state the scope check: this slide is K–3 policy context, not a Grade 9 mandate.'
+      ],
+      connect:'“So the K–3 policy shows that multilingual support has not disappeared. But for us in Junior High, there is an even more direct DepEd connection.”',
+      ask:['“What changed here: the existence of multilingual learners, or the formal medium-of-instruction policy?”'],
+      qa:[
+        ['Did RA 12027 ban the mother tongue?','No. It discontinued the mandatory mother-tongue medium of instruction for K–3. Regional languages may serve as auxiliary media, and mother-tongue MOI may still be used in qualifying monolingual classes under the law’s conditions.'],
+        ['Does DepEd Order 020 apply to Grade 9?','No. Its medium-of-instruction policy is specifically for Kindergarten to Grade 3. We use it here only as recent policy context.'],
+        ['So are teachers required to translanguage?','This slide does not establish a blanket requirement. It shows that DepEd explicitly recognizes translanguaging among possible linguistic supports in the K–3 policy.']
+      ],
+      caution:'Be exact with scope. Do not say RA 12027 or DO 020 “requires translanguaging in Grade 9.” It does not.'
+    },
+    {
+      time:'~1 min',
+      core:'DepEd/NEAP explicitly used pedagogical translanguaging in English-teaching training for Key Stages 1–3, which includes Junior High School.',
+      explain:[
+        'Read only the important phrase from the memorandum title: “Using Pedagogical Translanguaging to Support English Teaching for Key Stages 1–3.”',
+        'A 2025 DepEd Region VIII memorandum implementing the training cites DM-OULS-2025-078 and lists objectives such as improving knowledge of translanguaging and adapting teaching materials for multilingual classrooms.',
+        'Then make the Grade 9 connection: Key Stage 3 covers Grades 7–10, so this is directly relevant to Junior High School English professional development.'
+      ],
+      connect:'“The question then becomes practical: how can we use a learner’s languages without losing sight of English as the learning target?”',
+      ask:['“What word in the training title is important? Pedagogical—meaning planned for teaching, not random language mixing.”'],
+      qa:[
+        ['Is translanguaging officially mandated for every Grade 9 English lesson?','No. The memorandum documents and supports professional development on pedagogical translanguaging for English teaching; it is not a blanket instruction that every lesson must use it.'],
+        ['Why mention a training memorandum instead of only a curriculum guide?','Because it shows a recent DepEd/NEAP professional-development direction specifically naming pedagogical translanguaging for Key Stages 1–3.']
+      ],
+      caution:'Phrase this as a direct professional-development connection, not as proof that every classroom practice in this presentation is compulsory.'
+    },
+    {
+      time:'~1.5 min',
+      core:'The destination can remain academic English even when the path to it is multilingual.',
+      explain:[
+        'Start with the target: explain an argumentative claim in academic English.',
+        'Then walk the four stars: THINK → DISCUSS → BRIDGE → PRODUCE.',
+        'The important moment is BRIDGE. That is where the teacher deliberately moves meaning toward disciplinary English.',
+        'End with: “We are not changing the target. We are changing the support route.”'
+      ],
+      connect:'“If that route is designed well, it can improve three things we care about immediately: comprehension, participation, and bridging.”',
+      ask:['“Which of these four steps is most often missing when we tell students ‘English only’?”'],
+      qa:[
+        ['Will students become dependent on Filipino or the home language?','They can if the scaffold never changes. The teacher should keep the target output visible and gradually reduce support as learners gain control of the English language needed for the task.'],
+        ['Can the final output still be English-only?','Yes. Translanguaging can happen during processing, discussion, planning, or annotation while the assessed output remains in English.']
+      ],
+      caution:'Avoid promising that translanguaging always improves outcomes. Present it as a strategic scaffold that must match the task and learner need.'
+    },
+    {
+      time:'~1.5 min',
+      core:'Use translanguaging when it unlocks comprehension, increases meaningful participation, or bridges learners toward academic language.',
+      explain:[
+        'Comprehension: learners can access a difficult idea before language proficiency blocks the concept.',
+        'Participation: learners can contribute thinking before they can produce polished academic English.',
+        'Bridging: the teacher deliberately moves from familiar language toward disciplinary vocabulary and required output.',
+        'Do not treat the three benefits as automatic; they depend on purposeful use.'
+      ],
+      connect:'“So what does purposeful use actually look like tomorrow morning? Here are three small classroom moves.”',
+      ask:['“Which of these three is the biggest challenge in your class right now—comprehension, participation, or bridging?”'],
+      qa:[
+        ['What if students use the familiar language and stop there?','Build in a bridge step. Require the learner to identify the English term, sentence frame, or final output after meaning is established.'],
+        ['Is this only for struggling learners?','No. Multilingual meaning-making can support many learners, but the amount and type of scaffold should vary according to need and objective.']
+      ],
+      caution:'Do not frame home-language use as a rescue strategy only for “weak” students. Keep the tone asset-based rather than deficit-based.'
+    },
+    {
+      time:'~1.25 min',
+      core:'Think → Bridge → Share makes the multilingual support explicit and temporary.',
+      explain:[
+        'Think: allow the learner to first make the idea clear to themselves.',
+        'Bridge: ask for the key English word, phrase, or sentence structure needed.',
+        'Share: require the learner to express the idea in the agreed target language.',
+        'Use the sample teacher line exactly as a demo. It shows that the teacher does not supply the answer; the learner still does the intellectual work.'
+      ],
+      connect:'“That is one oral strategy. The same principle can also be used in discussion and in written annotation.”',
+      ask:['“Where could you insert the bridge step in one activity you already teach?”'],
+      qa:[
+        ['How long should the first-language thinking stage take?','It can be very brief—sometimes 20 to 60 seconds is enough. The amount of time should match the complexity of the task.'],
+        ['Should the teacher translate everything?','No. The teacher’s job is to scaffold meaning and the move toward English, not to replace the learner’s thinking or produce the answer for them.']
+      ],
+      caution:'Keep “bridge” visible. Without the bridge, the activity can become multilingual discussion without purposeful movement toward the target language.'
+    },
+    {
+      time:'~1.5 min',
+      core:'Multilingual discussion and annotation can support thinking while academic English remains visible and assessable.',
+      explain:[
+        'Strategy 2: let students discuss the concept using available linguistic resources, then refine vocabulary and structure before producing the required response.',
+        'Strategy 3: allow mixed-language notes, symbols, and diagrams while keeping key English academic terms visible.',
+        'Use “counterclaim” as the model: understand it through a familiar explanation, but retain the disciplinary English term.'
+      ],
+      connect:'“Let us test the principle in one Grade 9 classroom situation.”',
+      ask:['“Which is easier to try next week: discussion first, or multilingual annotation?”'],
+      qa:[
+        ['Can students annotate an English text in Filipino?','As a scaffold, yes, when it helps them make meaning. You can still require key academic terms, evidence labels, or the final response in English.'],
+        ['How do I prevent the class from becoming unfocused language mixing?','Set a clear purpose and output: what may be multilingual, what must stay in English, and when the bridge back to the target language happens.']
+      ],
+      caution:'The strategy should be structured. Give students explicit boundaries for processing language, academic vocabulary, and final output.'
+    },
+    {
+      time:'~2 min',
+      core:'Option B preserves learner thinking while scaffolding the move toward academic English.',
+      explain:[
+        'Give the group a short decision moment before revealing the rationale. If time is tight, use 30–45 seconds rather than the full two-minute timer.',
+        'A can be appropriate in some situations, but if the immediate barrier is expression rather than understanding, it may hide what the learner knows.',
+        'B makes the idea visible first, then bridges it toward English. This best illustrates the process shown in the previous slides.',
+        'C can over-scaffold if the teacher supplies the answer instead of helping the learner construct it.'
+      ],
+      connect:'“The key is not simply allowing another language. The key is using it to move the learner toward independent performance.”',
+      ask:['“Which option would you choose—and what exactly would you say next to the learner?”'],
+      qa:[
+        ['Is B always the correct answer?','No. The best response depends on the objective and the learner. B is the best illustration here because the scenario says the learner understands the concept but cannot yet express it in English.'],
+        ['What if the assessment itself is English speaking proficiency?','Then the amount of multilingual support during the assessed performance may need to be limited. Translanguaging can still be used before the assessment for rehearsal, concept building, and vocabulary preparation.']
+      ],
+      caution:'Do not turn the scenario into “English-only is always wrong.” The instructional choice depends on what is being assessed and when.'
+    },
+    {
+      time:'~1 min',
+      core:'Use learners’ languages strategically, scaffold the bridge, and keep the learning goal visible.',
+      explain:[
+        'Pause on “Language should be a bridge, not a barrier.”',
+        'Use the reflection question to return responsibility to instructional design: are we measuring the intended learning, or only the language barrier?',
+        'Land on three words: strategic, scaffolded, goal-oriented.',
+        'End with one practical invitation: “Choose one lesson this week where students know more than they can currently say in English. Try one bridge.”'
+      ],
+      connect:'“That is the whole idea: not English versus Filipino, but purposeful language support in service of learning.”',
+      ask:['Final reflection: “What will you illuminate next in your own classroom?”'],
+      qa:[
+        ['What is the easiest way to start tomorrow?','Pick one existing activity. Keep the final English target, but add one structured bridge: multilingual thinking, partner explanation, or annotation before the final response.'],
+        ['What should I remember if I forget everything else?','Translanguaging is not random language mixing. It is strategic, scaffolded, and tied to a learning objective.']
+      ],
+      caution:'Finish on practice, not policy. The audience should leave with one usable move rather than a list of issuances.'
+    }
+  ];
+
+  function listHTML(items){ return items.map(item => `<li>${item}</li>`).join(''); }
+  function qaHTML(items){ return items.map(([q,a]) => `<div class="qa-card"><strong>Q: ${q}</strong><p>${a}</p></div>`).join(''); }
+
+  function renderPresenter(index){
+    if (!presenterMode) return;
+    const note = presenterNotes[index] || presenterNotes[0];
+    document.getElementById('presenterSlideTitle').textContent = scenes[index]?.dataset.title || `Slide ${index+1}`;
+    document.getElementById('presenterMeta').textContent = `Slide ${index+1} of ${scenes.length} · ${note.time}`;
+    document.getElementById('presenterCore').textContent = note.core;
+    document.getElementById('presenterExplain').innerHTML = listHTML(note.explain);
+    document.getElementById('presenterConnect').textContent = note.connect;
+    document.getElementById('presenterAsk').innerHTML = listHTML(note.ask);
+    document.getElementById('presenterQA').innerHTML = qaHTML(note.qa);
+    document.getElementById('presenterCaution').textContent = note.caution || '';
+    document.getElementById('presenterCautionWrap').style.display = note.caution ? '' : 'none';
+    document.getElementById('presenterNextTitle').textContent = scenes[index+1]?.dataset.title || 'End of session';
+  }
+
+  function getExtraRevealCount(sceneIndex){
+    const scene = scenes[sceneIndex];
+    const initial = initialRevealState.get(sceneIndex) || [];
+    return [...scene.querySelectorAll('.reveal')].reduce((n,el,i) => n + (!initial[i] && el.classList.contains('is-visible') ? 1 : 0), 0);
+  }
+
+  function applyExtraRevealCount(sceneIndex,count){
+    const scene = scenes[sceneIndex];
+    const all = [...scene.querySelectorAll('.reveal')];
+    const initial = initialRevealState.get(sceneIndex) || [];
+    let extrasSeen = 0;
+    all.forEach((el,i) => {
+      if (initial[i]) { el.classList.add('is-visible'); return; }
+      extrasSeen++;
+      el.classList.toggle('is-visible', extrasSeen <= count);
+    });
+  }
+
+  function publishState(){
+    const state = {current,reveals:scenes.map((_,i)=>getExtraRevealCount(i))};
+    try { localStorage.setItem('translanguaging-presenter-state', JSON.stringify(state)); } catch(e) {}
+    syncChannel?.postMessage({origin:syncOrigin,type:'state',state});
+  }
+
+  function applyRemoteState(state){
+    if (!state) return;
+    (state.reveals || []).forEach((count,i)=>applyExtraRevealCount(i,Number(count)||0));
+    if (Number.isInteger(state.current)) {
+      current = Math.max(0,Math.min(scenes.length-1,state.current));
+      scenes[current].scrollIntoView({behavior:'auto'});
+      scenes.forEach((s,i) => s.classList.toggle('is-current', i === current));
+      nodes.forEach((n,i) => { n.classList.toggle('is-active',i===current); n.classList.toggle('is-past',i<current); });
+      lines.forEach((l,i)=>l.classList.toggle('is-lit',i<current));
+      renderPresenter(current);
+    }
+  }
+
+  if (presenterMode) document.body.classList.add('presenter-mode');
+  if (presenterMode || syncView) {
+    try {
+      const saved = JSON.parse(localStorage.getItem('translanguaging-presenter-state') || 'null');
+      if (saved) setTimeout(()=>applyRemoteState(saved),0);
+    } catch(e) {}
+  }
+  syncChannel?.addEventListener('message', e => {
+    if (!e.data || e.data.origin === syncOrigin) return;
+    if (e.data.type === 'state') applyRemoteState(e.data.state);
+  });
+  window.addEventListener('storage', e => {
+    if (e.key !== 'translanguaging-presenter-state' || !e.newValue) return;
+    try { applyRemoteState(JSON.parse(e.newValue)); } catch(err) {}
+  });
+
+  // Atmospheric stars: deterministic positions for consistency.
+  const starField = document.getElementById('stars');
+  const stars = [
+    [5,11,0],[13,24,1.8],[18,8,.6],[26,18,3.2],[33,7,2.1],[39,29,1.1],[48,12,3.8],[57,22,.2],[66,8,2.7],[73,31,1.5],[82,14,4.1],[91,27,.9],
+    [8,56,2.2],[16,74,.5],[24,47,4],[31,63,1.4],[43,51,3],[52,75,.8],[61,58,2.4],[69,70,4.5],[78,52,1.6],[88,67,3.3],[95,49,.3],
+    [4,89,3.7],[20,87,1.2],[36,92,2.6],[55,88,.7],[72,91,3.9],[86,85,1.9]
+  ];
+  stars.forEach(([x,y,d],i) => {
+    const s = document.createElement('span');
+    s.className = 'star-dot';
+    s.style.left = `${x}%`; s.style.top = `${y}%`; s.style.animationDelay = `${d}s`;
+    s.style.width = s.style.height = `${2 + (i % 3)}px`;
+    starField.appendChild(s);
+  });
+
+  const revealables = scene => [...scene.querySelectorAll('.reveal:not(.is-visible)')];
+
+  function revealNext(scene = scenes[current]) {
+    const next = revealables(scene)[0];
+    if (next) {
+      next.classList.add('is-visible');
+      publishState();
+      return true;
+    }
+    return false;
+  }
+
+  function goTo(index) {
+    index = Math.max(0, Math.min(scenes.length - 1, index));
+    scenes[index].scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    setCurrent(index);
+    if (!presenterMode && !sessionTimerStarted && index > 0) startSessionClock();
+    mobileMenu?.classList.remove('is-open');
+    menuBtn?.setAttribute('aria-expanded','false');
+  }
+
+  function setCurrent(index) {
+    current = index;
+    scenes.forEach((s,i) => s.classList.toggle('is-current', i === index));
+    nodes.forEach((n,i) => {
+      n.classList.toggle('is-active', i === index);
+      n.classList.toggle('is-past', i < index);
+    });
+    lines.forEach((l,i) => l.classList.toggle('is-lit', i < index));
+    renderPresenter(index);
+    publishState();
+  }
+
+  document.querySelectorAll('[data-go]').forEach(btn => btn.addEventListener('click', () => goTo(Number(btn.dataset.go))));
+  document.querySelectorAll('[data-next-scene]').forEach(btn => btn.addEventListener('click', () => goTo(current + 1)));
+  document.querySelectorAll('[data-reveal-next]').forEach(btn => btn.addEventListener('click', () => {
+    if (!revealNext()) goTo(current + 1);
+  }));
+
+  // Observe manual swipes/scrolling.
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > .55) setCurrent(Number(entry.target.dataset.scene));
+    });
+  }, {root:deck, threshold:[.55,.75]});
+  scenes.forEach(s => observer.observe(s));
+
+  // Keyboard presentation controls.
+  document.addEventListener('keydown', e => {
+    if (['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) return;
+    if (document.querySelector('dialog[open]')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      if (!revealNext()) goTo(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault(); goTo(current - 1);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault(); goTo(current + 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault(); goTo(current - 1);
+    } else if (e.key.toLowerCase() === 'f') {
+      toggleFullscreen();
+    } else if (e.key.toLowerCase() === 'p' && !presenterMode) {
+      presenterBtn?.click();
+    }
+  });
+
+  // Tap/click on empty scene space to reveal, while avoiding controls.
+  scenes.forEach(scene => scene.addEventListener('click', e => {
+    if (e.target.closest('button,a,dialog,.scenario-options')) return;
+    if (matchMedia('(pointer:fine)').matches) revealNext(scene);
+  }));
+
+  function startSessionClock(){
+    sessionTimerStarted = true;
+    const id = setInterval(() => {
+      sessionSeconds = Math.max(0, sessionSeconds - 1);
+      const m = String(Math.floor(sessionSeconds/60)).padStart(2,'0');
+      const s = String(sessionSeconds%60).padStart(2,'0');
+      clock.textContent = `${m}:${s}`;
+      if (sessionSeconds === 0) { clearInterval(id); clock.textContent = '00:00'; }
+    },1000);
+  }
+
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+  function toggleFullscreen(){
+    if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+    else document.exitFullscreen?.();
+  }
+  fullscreenBtn.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', () => fullscreenBtn.textContent = document.fullscreenElement ? '×' : '⛶');
+
+
+  const presenterBtn = document.getElementById('presenterBtn');
+  presenterBtn?.addEventListener('click', () => {
+    publishState();
+    const u = new URL(location.href);
+    u.searchParams.set('presenter','1');
+    const w = window.open(u.toString(),'translanguagingPresenter','popup,width=1500,height=900,resizable=yes,scrollbars=yes');
+    if (!w) location.href = u.toString();
+  });
+
+  if (presenterMode) {
+    document.getElementById('presenterPrev')?.addEventListener('click',()=>goTo(current-1));
+    document.getElementById('presenterNext')?.addEventListener('click',()=>goTo(current+1));
+    document.getElementById('presenterReveal')?.addEventListener('click',()=>{ if(!revealNext()) goTo(current+1); });
+    document.getElementById('presenterReset')?.addEventListener('click',()=>{
+      applyExtraRevealCount(current,0); publishState();
+    });
+    document.getElementById('presenterClose')?.addEventListener('click',()=>window.close());
+    document.getElementById('openAudienceBtn')?.addEventListener('click',()=>{
+      const u = new URL(location.href); u.searchParams.delete('presenter'); u.searchParams.set('sync','1');
+      window.open(u.toString(),'translanguagingAudience');
+    });
+  }
+
+  menuBtn?.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+
+  // Scenario interaction.
+  const feedback = document.getElementById('feedbackCard');
+  const scenarioButtons = [...document.querySelectorAll('[data-choice]')];
+  const feedbackText = {
+    A: `<span class="tiny-star">✦</span><p><strong>A keeps the target language visible,</strong> but it may prevent the learner from demonstrating conceptual understanding if expression is the immediate barrier.</p><p>Ask: what are you assessing at this moment—concept mastery, English production, or both?</p>`,
+    B: `<span class="tiny-star">✦</span><p><strong>B illustrates pedagogical translanguaging.</strong></p><p>Comprehension → bridging → scaffolding → target output.</p><p>The learner first makes the idea visible, then the teacher helps move that meaning toward academic English.</p>`,
+    C: `<span class="tiny-star">✦</span><p><strong>C may reduce productive struggle.</strong> If the teacher supplies the answer, the learner may not do the language work needed to bridge toward independent English production.</p><p>Support the learner—without replacing the learner.</p>`
+  };
+  scenarioButtons.forEach(btn => btn.addEventListener('click', () => {
+    scenarioButtons.forEach(b => b.classList.remove('is-selected'));
+    btn.classList.add('is-selected');
+    feedback.innerHTML = feedbackText[btn.dataset.choice];
+  }));
+
+  // Two-minute discussion timer.
+  const timerBtn = document.getElementById('timerBtn');
+  const moon = document.getElementById('moon');
+  let activitySeconds = 120, activityId = null;
+  timerBtn.addEventListener('click', () => {
+    if (activityId) {
+      clearInterval(activityId); activityId = null; activitySeconds = 120; moon.textContent = '2:00'; timerBtn.textContent='Start 2-minute discussion'; return;
+    }
+    timerBtn.textContent = 'Reset timer';
+    activityId = setInterval(() => {
+      activitySeconds--;
+      moon.textContent = `${Math.floor(activitySeconds/60)}:${String(activitySeconds%60).padStart(2,'0')}`;
+      const pct = Math.max(0, activitySeconds/120);
+      moon.style.boxShadow = `0 0 ${20 + 45*pct}px rgba(255,217,120,${.08 + .2*pct}), inset -14px -12px 25px rgba(97,66,5,.2)`;
+      if (activitySeconds <= 0) {
+        clearInterval(activityId); activityId = null; activitySeconds = 120; timerBtn.textContent='Start again'; moon.textContent='0:00';
+      }
+    },1000);
+  });
+
+  const dialog = document.getElementById('sourcesDialog');
+  document.getElementById('resourcesBtn').addEventListener('click', () => dialog.showModal());
+
+  // Touch swipe navigation.
+  let y0 = null, x0 = null;
+  deck.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+  deck.addEventListener('touchend', e => {
+    if (x0 === null || y0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    const dy = e.changedTouches[0].clientY - y0;
+    x0 = y0 = null;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) { if (!revealNext()) goTo(current + 1); }
+      else goTo(current - 1);
+    }
+  }, {passive:true});
+
+  if (!presenterMode) setCurrent(0); else renderPresenter(current);
+})();
+
+  </script>
+</body>
+</html>
